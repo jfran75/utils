@@ -1,0 +1,16 @@
+{
+    "editor.fontSize": 14,
+    "window.zoomLevel": 2,
+    "debug.console.fontSize": 16,
+    "terminal.integrated.fontSize": 16,
+    "markdown.preview.fontSize": 16,
+    "terminal.integrated.fontFamily": "'Hack Nerd Font', 'Regular'",
+    "terminal.integrated.rendererType": "canvas",
+    "explorer.confirmDragAndDrop": false,
+    "terminal.integrated.cursorBlinking": true,
+    "terminal.integrated.cursorStyle": "underline",
+    "editor.tabSize": 2,
+    "editor.detectIndentation": false,
+    "git.enableSmartCommit": true,
+    "explorer.confirmDelete": false
+}
