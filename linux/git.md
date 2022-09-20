@@ -6,6 +6,18 @@ git config --global core.editor nvim
 git config --list
 
 #### set git for bitbucket megacable
+cat ~/.ssh/config
+nvim ~/.ssh/config
+
+Host bitbucket.org
+    HostName altssh.bitbucket.org
+    Port 443
+    HostkeyAlias bitbucket.org
+    IdentityFile ~/.ssh/bitbucket_mega_id_rsa
+
+chmod 600 ~/.ssh/config
+chmod 400 ~/.ssh/id_rsa_github
+
 
 #### right ~/.ssh folder
 drwx------ jchinchillas staff 352 B  Wed Jul  6 12:25:52 2022  .ssh
@@ -32,3 +44,30 @@ ssh-keygen ~/.ssh/bitbucket_mega
 2852  cat bitbucket_rapidus_id_rsa.pub
 
 nvim ~/.ssh/config
+
+
+jchinchillas@c1-infra1-sfyc ~/.ssh % ll
+
+drwx------   2 jchinchillas jchinchillas   94 Mar  8  2022 .ssh
+
+total 24K
+-rw-r--r--  1 jchinchillas jchinchillas  424 Feb 21  2022 id_rsa.pub
+-rw-------  1 jchinchillas jchinchillas 1.7K Feb 21  2022 id_rsa
+-rw-------  1 jchinchillas jchinchillas   97 Mar  8  2022 config
+drwx------  2 jchinchillas jchinchillas   94 Mar  8  2022 .
+-rw-r--r--  1 jchinchillas jchinchillas 1.7K Mar  8  2022 known_hosts
+-rw-------  1 jchinchillas jchinchillas 1.2K May 18 07:57 authorized_keys
+drwx------. 7 jchinchillas jchinchillas 4.0K Sep 20 12:13 ..
+
+
+
+
+
+
+
+
+
+
+
+
+
