@@ -1,6 +1,6 @@
-
 #### pendientes
 - git
+  - repositorios de megacable
 - background image
 - 1password
 - borders awesome 
@@ -11,3 +11,14 @@
 - vscode
 - dotnet
 - mouse bluetooh
+- nvm
+- nvim
+  - lsp server
+  - nvchad
+- docker
+- k9s
+- docker manager at terminal
+- rider
+- xcopy 
+- set initial commands
+  - mouse touch pad 
