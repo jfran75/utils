@@ -5,6 +5,17 @@ git config --global user.email "jesus.chinchillas@megacable.com.mx"
 git config --global core.editor nvim
 git config --list
 
+#### generate a key
+ssh-keygen -f ~/.ssh/bitbucket_mega_id_rsa
+cat ~/.ssh/bitbucket_mega_id_rsa_pub | xclip -selection c
+
+chmod 600 ~/.ssh/config
+chmod 400 ~/.ssh/bitbucket_mega_id_rsa
+
+#### disable ipv6
+sysctl -w net.ipv6.conf.all.disable_ipv6=1
+sysctl -w net.ipv6.conf.default.disable_ipv6=1
+
 #### set git for bitbucket megacable
 cat ~/.ssh/config
 nvim ~/.ssh/config
@@ -13,61 +24,10 @@ Host bitbucket.org
     HostName altssh.bitbucket.org
     Port 443
     HostkeyAlias bitbucket.org
-    IdentityFile ~/.ssh/bitbucket_mega_id_rsa
-
-chmod 600 ~/.ssh/config
-chmod 400 ~/.ssh/id_rsa_github
 
 
-#### right ~/.ssh folder
-drwx------ jchinchillas staff 352 B  Wed Jul  6 12:25:52 2022  .ssh
-
-#### right ~/.ssh files
-drwx------ jchinchillas staff 352 B  Wed Jul  6 12:25:52 2022  .
-drwxr-xr-x jchinchillas staff 3.2 KB Tue Sep 20 11:45:48 2022  ..
-.rw------- jchinchillas staff 576 B  Fri Nov  5 16:59:03 2021  authorized_keys
-.rw------- jchinchillas staff 2.6 KB Thu Mar  3 07:47:37 2022  bitbucket_mega_id_rsa
-.rw-r--r-- jchinchillas staff 583 B  Thu Mar  3 07:47:37 2022  bitbucket_mega_id_rsa.pub
-.rw------- jchinchillas staff 2.6 KB Tue Nov 24 17:20:44 2020  id_rsa
-.rw-r--r-- jchinchillas staff 596 B  Tue Nov 24 17:20:44 2020  id_rsa.pub
-.rw------- jchinchillas staff  31 KB Wed Jul  6 12:28:56 2022  known_hosts
-
-ssh-keygen ~/.ssh/bitbucket_mega
-
-2847  GIT_SSH_COMMAND="ssh -i ~/.ssh/bitbucket_id_rsa.pub -F /dev/null" git clone git@bitbucket.org:jescarrega/kubernetes.git
-
-
-2853  GIT_SSH_COMMAND="ssh -i ~/.ssh/bitbucket_rapidus_id_rsa -F /dev/null" git clone git@bitbucket.org:jescarrega/kubernetes.git
-2854  GIT_SSH_COMMAND="ssh -i ~/.ssh/bitbucket_rapidus_id_rsa -F /dev/null" git clone git@bitbucket.org:rlabperrones/kubernetes.git
-
-2855  git config core.sshCommand "ssh -i ~/.ssh/bitbucket_rapidus_id_rsa -F /dev/null"
-2852  cat bitbucket_rapidus_id_rsa.pub
-
-nvim ~/.ssh/config
-
-
-jchinchillas@c1-infra1-sfyc ~/.ssh % ll
-
-drwx------   2 jchinchillas jchinchillas   94 Mar  8  2022 .ssh
-
-total 24K
--rw-r--r--  1 jchinchillas jchinchillas  424 Feb 21  2022 id_rsa.pub
--rw-------  1 jchinchillas jchinchillas 1.7K Feb 21  2022 id_rsa
--rw-------  1 jchinchillas jchinchillas   97 Mar  8  2022 config
-drwx------  2 jchinchillas jchinchillas   94 Mar  8  2022 .
--rw-r--r--  1 jchinchillas jchinchillas 1.7K Mar  8  2022 known_hosts
--rw-------  1 jchinchillas jchinchillas 1.2K May 18 07:57 authorized_keys
-drwx------. 7 jchinchillas jchinchillas 4.0K Sep 20 12:13 ..
-
-
-
-
-
-
-
-
-
-
-
+#### check connections
+ssh -v git@bitbucket.org
+ssh -v hg@bitbucket.org
 
 
