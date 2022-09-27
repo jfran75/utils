@@ -1,6 +1,8 @@
 
 #### Displays
 xrandr --auto --output HDMI-1-2 --mode 1920x1080 --right-of eDP-1-1
+
+#### laptop-lenovo
 xrandr --auto --output HDMI-1 --mode 1920x1080 --right-of eDP-1
 
 #### bluetooth audifonos WH-1000XM4
@@ -18,3 +20,4 @@ bluetoothctl paired-devices
 
 #### set audio volume to 100%
 amixer -D pulse sset Master 100%
+

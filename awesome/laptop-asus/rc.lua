@@ -58,6 +58,7 @@ terminal = "kitty"
 -- terminal = "x-terminal-emulator"
 editor = os.getenv("nvim") or "editor"
 editor_cmd = terminal .. " -e " .. editor
+settings_cmd = terminal .. " -e " .. "gnome-control-center"
 
 -- Default modkey.
 -- Usually, Mod4 is the key with a logo between Control and Alt.
@@ -92,12 +93,13 @@ awful.layout.layouts = {
 myawesomemenu = {
    { "hotkeys", function() hotkeys_popup.show_help(nil, awful.screen.focused()) end },
    { "manual", terminal .. " -e man awesome" },
+   { "settings", settings_cmd },
    { "edit config", editor_cmd .. " " .. awesome.conffile },
    { "restart", awesome.restart },
    { "quit", function() awesome.quit() end },
 }
 
-local menu_awesome = { "awesome", myawesomemenu, beautiful.awesome_icon }
+local menu_awesome = { "awesome mod", myawesomemenu, beautiful.awesome_icon }
 local menu_terminal = { "open terminal", terminal }
 
 if has_fdo then
