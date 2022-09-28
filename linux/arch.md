@@ -1,8 +1,5 @@
 #### arch linux
 
-
-
-
 #### set keyboard rate not persistent
 xset r rate 200 30
 
