@@ -1,0 +1,106 @@
+CopyQ DEBUG [2022-09-28 00:20:25.813] <Client-6913>: Waiting for server to start
+CopyQ ERROR [2022-09-28 00:20:26.819] <Client-6913>: Cannot connect to server! Start CopyQ server first.
+CopyQ DEBUG [2022-09-28 00:21:26.758] <Client-7388>: Waiting for server to start
+CopyQ ERROR [2022-09-28 00:21:27.763] <Client-7388>: Cannot connect to server! Start CopyQ server first.
+CopyQ DEBUG [2022-09-28 00:22:01.028] <Client-7514>: Waiting for server to start
+CopyQ ERROR [2022-09-28 00:22:02.033] <Client-7514>: Cannot connect to server! Start CopyQ server first.
+CopyQ DEBUG [2022-09-28 00:23:30.236] <Server-8935>: Server "/home/jchinchillas/.config/copyq/.copyq_s" started.
+CopyQ DEBUG [2022-09-28 00:23:30.318] <Server-8935>: Geometry: Window "MainWindow": Restore geometry "Options/MainWindow_geometry": 645x421,0,0 -> 1256x708,80,30
+CopyQ DEBUG [2022-09-28 00:23:30.322] <Server-8935>: Focus window is "sh -c "sleep 10; copyq"\n"
+CopyQ DEBUG [2022-09-28 00:23:30.343] <Server-8935>: Loading configuration
+CopyQ DEBUG [2022-09-28 00:23:30.476] <Server-8935>: Configuration loaded
+CopyQ DEBUG [2022-09-28 00:23:30.479] <Server-8935>: Starting monitor
+CopyQ DEBUG [2022-09-28 00:23:30.483] <Server-8935>: Executing: copyq --clipboard-access monitorClipboard
+CopyQ DEBUG [2022-09-28 00:23:30.490] <Server-8935>: Starting callback: onStart
+CopyQ DEBUG [2022-09-28 00:23:30.494] <Server-8935>: Executing: copyq onStart
+CopyQ DEBUG [2022-09-28 00:23:30.504] <Server-8935>: Tab "&clipboard": Loading items from: /home/jchinchillas/.config/copyq/copyq_tab_JmNsaXBib2FyZA==.dat
+CopyQ DEBUG [2022-09-28 00:23:30.507] <Server-8935>: Tab "&clipboard": 200 items loaded from: /home/jchinchillas/.config/copyq/copyq_tab_JmNsaXBib2FyZA==.dat
+CopyQ DEBUG [2022-09-28 00:23:30.518] <Server-8935>: Executing: copyq eval -- runMenuCommandFilters()
+CopyQ DEBUG [2022-09-28 00:23:30.630] <monitorClipboard-8983>: Clipboard formats to save: image/svg+xml, image/png, image/gif, application/x-copyq-encrypted, application/x-copyq-item-notes, application/x-copyq-item-icon, application/x-copyq-item-pinned, application/x-copyq-tags, text/plain, text/plain;charset=utf-8, text/html, application/x-copyq-item
+CopyQ DEBUG [2022-09-28 00:23:30.644] <monitorClipboard-8983>: Selection changed, owner is ""
+CopyQ DEBUG [2022-09-28 00:23:30.647] <monitorClipboard-8983>: Clipboard changed, owner is ""
+CopyQ DEBUG [2022-09-28 00:23:36.367] <Server-8935>: Saving items on application state change (2)
+CopyQ DEBUG [2022-09-28 00:23:36.479] <Server-8935>: Focus window is "sh -c "sleep 10; copyq"\n"
+CopyQ DEBUG [2022-09-28 00:23:37.078] <Server-8935>: Auto-hiding unfocused main window
+CopyQ DEBUG [2022-09-28 00:23:43.095] <monitorClipboard-8983>: Terminating application on signal.
+CopyQ DEBUG [2022-09-28 00:23:43.095] <Client-8985>: Terminating application on signal.
+CopyQ DEBUG [2022-09-28 00:23:43.095] <Server-8935>: Terminating application on signal.
+CopyQ DEBUG [2022-09-28 00:23:43.407] <Server-8935>: Closing server.
+CopyQ DEBUG [2022-09-28 00:23:43.413] <Server-8935>: Starting callback: onExit
+CopyQ DEBUG [2022-09-28 00:23:43.417] <Server-8935>: Executing: copyq onExit
+CopyQ DEBUG [2022-09-28 00:23:43.422] <Server-8935>: Waiting for callback to finish
+CopyQ DEBUG [2022-09-28 00:23:43.426] <Server-8935>: Monitor finished
+CopyQ DEBUG [2022-09-28 00:23:43.428] <Server-8935>: Starting monitor
+CopyQ DEBUG [2022-09-28 00:23:43.431] <Server-8935>: Executing: copyq --clipboard-access monitorClipboard
+CopyQ DEBUG [2022-09-28 00:23:43.461] <Server-8935>: Callback finished
+CopyQ DEBUG [2022-09-28 00:23:43.496] <monitorClipboard-9040>: Terminating application on signal.
+CopyQ DEBUG [2022-09-28 00:23:43.504] <monitorClipboard-9040>: Waiting for server to start
+CopyQ ERROR [2022-09-28 00:23:44.506] <monitorClipboard-9040>: Cannot connect to server! Start CopyQ server first.
+CopyQ DEBUG [2022-09-28 00:23:44.558] <Server-8935>: Monitor finished
+CopyQ DEBUG [2022-09-28 00:24:01.313] <Server-9176>: Server "/home/jchinchillas/.config/copyq/.copyq_s" started.
+CopyQ DEBUG [2022-09-28 00:24:01.359] <Server-9176>: Geometry: Window "MainWindow": Restore geometry "Options/MainWindow_geometry": 645x421,0,0 -> 1256x708,80,30
+CopyQ DEBUG [2022-09-28 00:24:01.362] <Server-9176>: Focus window is "…/repos/utils/linux"
+CopyQ DEBUG [2022-09-28 00:24:01.372] <Server-9176>: Loading configuration
+CopyQ DEBUG [2022-09-28 00:24:01.474] <Server-9176>: Configuration loaded
+CopyQ DEBUG [2022-09-28 00:24:01.478] <Server-9176>: Starting monitor
+CopyQ DEBUG [2022-09-28 00:24:01.480] <Server-9176>: Executing: copyq --clipboard-access monitorClipboard
+CopyQ DEBUG [2022-09-28 00:24:01.484] <Server-9176>: Starting callback: onStart
+CopyQ DEBUG [2022-09-28 00:24:01.487] <Server-9176>: Executing: copyq onStart
+CopyQ DEBUG [2022-09-28 00:24:01.493] <Server-9176>: Tab "&clipboard": Loading items from: /home/jchinchillas/.config/copyq/copyq_tab_JmNsaXBib2FyZA==.dat
+CopyQ DEBUG [2022-09-28 00:24:01.496] <Server-9176>: Tab "&clipboard": 200 items loaded from: /home/jchinchillas/.config/copyq/copyq_tab_JmNsaXBib2FyZA==.dat
+CopyQ DEBUG [2022-09-28 00:24:01.506] <Server-9176>: Executing: copyq eval -- runMenuCommandFilters()
+CopyQ DEBUG [2022-09-28 00:24:01.614] <monitorClipboard-9194>: Clipboard formats to save: image/svg+xml, image/png, image/gif, application/x-copyq-encrypted, application/x-copyq-item-notes, application/x-copyq-item-icon, application/x-copyq-item-pinned, application/x-copyq-tags, text/plain, text/plain;charset=utf-8, text/html, application/x-copyq-item
+CopyQ DEBUG [2022-09-28 00:24:01.629] <monitorClipboard-9194>: Selection changed, owner is ""
+CopyQ DEBUG [2022-09-28 00:24:01.631] <monitorClipboard-9194>: Clipboard changed, owner is ""
+CopyQ DEBUG [2022-09-28 00:24:06.825] <Server-9176>: Saving items on application state change (2)
+CopyQ DEBUG [2022-09-28 00:24:06.947] <Server-9176>: Focus window is "…/repos/utils/linux"
+CopyQ DEBUG [2022-09-28 00:24:07.508] <Server-9176>: Auto-hiding unfocused main window
+CopyQ DEBUG [2022-09-28 00:24:11.947] <Server-9176>: Focus window is "…/repos/utils/linux"
+CopyQ DEBUG [2022-09-28 00:24:11.953] <Server-9176>: Geometry: Window "MainWindow": Move to current workspace
+CopyQ DEBUG [2022-09-28 00:24:11.965] <Server-9176>: Raising window "CopyQ"
+CopyQ DEBUG [2022-09-28 00:24:13.177] <Server-9176>: Saving items on application state change (2)
+CopyQ DEBUG [2022-09-28 00:24:13.286] <Server-9176>: Focus window is "…/repos/utils/linux"
+CopyQ DEBUG [2022-09-28 00:24:13.772] <Server-9176>: Auto-hiding unfocused main window
+CopyQ DEBUG [2022-09-28 00:24:24.289] <Server-9176>: Focus window is "…/repos/utils/linux"
+CopyQ DEBUG [2022-09-28 00:24:24.295] <Server-9176>: Geometry: Window "MainWindow": Move to current workspace
+CopyQ DEBUG [2022-09-28 00:24:24.304] <Server-9176>: Raising window "CopyQ"
+CopyQ DEBUG [2022-09-28 00:24:26.056] <Server-9176>: Saving items on application state change (2)
+CopyQ DEBUG [2022-09-28 00:24:26.162] <Server-9176>: Focus window is "…/repos/utils/linux"
+CopyQ DEBUG [2022-09-28 00:24:26.654] <Server-9176>: Auto-hiding unfocused main window
+CopyQ DEBUG [2022-09-28 00:26:44.597] <monitorClipboard-9194>: New selection owner: "…/repos/utils/linux"
+CopyQ DEBUG [2022-09-28 00:26:44.635] <monitorClipboard-9194>: Clipboard unchanged, selection *CHANGED*. Test again in 0ms.
+CopyQ DEBUG [2022-09-28 00:26:44.639] <monitorClipboard-9194>: Selection changed, owner is ""
+CopyQ DEBUG [2022-09-28 00:26:44.644] <Server-9176>: Executing: copyq --clipboard-access synchronizeFromSelection
+CopyQ DEBUG [2022-09-28 00:26:44.663] <monitorClipboard-9194>: Clipboard unchanged, selection unchanged. Test again in 50ms.
+CopyQ DEBUG [2022-09-28 00:26:44.667] <monitorClipboard-9194>: onMonitorClipboardChanged: foreign selection, owner is ""
+CopyQ DEBUG [2022-09-28 00:26:44.670] <Server-9176>: Executing: copyq onClipboardChanged
+CopyQ DEBUG [2022-09-28 00:26:44.709] <Server-9176>: New item: Adding
+CopyQ DEBUG [2022-09-28 00:26:44.716] <monitorClipboard-9194>: Clipboard unchanged, selection unchanged. Test again in 150ms.
+CopyQ DEBUG [2022-09-28 00:26:44.770] <synchronizeFromSelection-10068>: Synchronizing to clipboard: Calling provideClipboard()
+CopyQ DEBUG [2022-09-28 00:26:44.782] <monitorClipboard-9194>: New clipboard owner: "…/repos/utils/linux"
+CopyQ DEBUG [2022-09-28 00:26:44.782] <synchronizeFromSelection-10068>: Clipboard *CHANGED*, selection unchanged. Test again in 0ms.
+CopyQ DEBUG [2022-09-28 00:26:44.908] <synchronizeFromSelection-10068>: Clipboard unchanged, selection unchanged. Test again in 50ms.
+CopyQ DEBUG [2022-09-28 00:26:44.912] <synchronizeFromSelection-10068>: Started providing clipboard
+CopyQ DEBUG [2022-09-28 00:26:44.930] <monitorClipboard-9194>: Clipboard *CHANGED*, selection unchanged. Test again in 0ms.
+CopyQ DEBUG [2022-09-28 00:26:44.933] <monitorClipboard-9194>: Clipboard changed, owner is " <synchronizeFromSelection-10068>/1"
+CopyQ DEBUG [2022-09-28 00:26:44.936] <monitorClipboard-9194>: onMonitorClipboardChanged: own clipboard, owner is " <synchronizeFromSelection-10068>/1"
+CopyQ DEBUG [2022-09-28 00:26:44.941] <Server-9176>: Executing: copyq onOwnClipboardChanged
+CopyQ DEBUG [2022-09-28 00:26:44.954] <monitorClipboard-9194>: Clipboard unchanged, selection unchanged. Test again in 50ms.
+CopyQ DEBUG [2022-09-28 00:26:44.962] <synchronizeFromSelection-10068>: Clipboard unchanged, selection unchanged. Test again in 150ms.
+CopyQ DEBUG [2022-09-28 00:26:45.007] <monitorClipboard-9194>: Clipboard unchanged, selection unchanged. Test again in 150ms.
+CopyQ DEBUG [2022-09-28 00:26:45.097] <Server-9176>: Focus window is "…/repos/utils/linux"
+CopyQ DEBUG [2022-09-28 00:26:45.119] <synchronizeFromSelection-10068>: Clipboard unchanged, selection unchanged. Test again in 350ms.
+CopyQ DEBUG [2022-09-28 00:26:45.171] <monitorClipboard-9194>: Clipboard unchanged, selection unchanged. Test again in 350ms.
+CopyQ DEBUG [2022-09-28 00:26:45.458] <synchronizeFromSelection-10068>: Clipboard unchanged, selection unchanged.
+CopyQ DEBUG [2022-09-28 00:26:45.511] <monitorClipboard-9194>: Clipboard unchanged, selection unchanged.
+CopyQ DEBUG [2022-09-28 00:26:45.634] <Server-9176>: Auto-hiding unfocused main window
+CopyQ DEBUG [2022-09-28 00:26:46.098] <monitorClipboard-9194>: Clipboard unchanged, selection unchanged. Test again in 0ms.
+CopyQ DEBUG [2022-09-28 00:26:46.098] <synchronizeFromSelection-10068>: New clipboard owner: "…/repos/utils/linux"
+CopyQ DEBUG [2022-09-28 00:26:46.220] <synchronizeFromSelection-10068>: Clipboard *CHANGED*, selection unchanged. Test again in 0ms.
+CopyQ DEBUG [2022-09-28 00:26:46.235] <monitorClipboard-9194>: Clipboard *CHANGED*, selection unchanged. Test again in 150ms.
+CopyQ DEBUG [2022-09-28 00:26:46.238] <monitorClipboard-9194>: Ignoring unchanged clipboard
+CopyQ DEBUG [2022-09-28 00:26:46.241] <Server-9176>: Executing: copyq onClipboardUnchanged
+CopyQ DEBUG [2022-09-28 00:26:46.238] <synchronizeFromSelection-10068>: Clipboard unchanged, selection unchanged. Test again in 50ms.
+CopyQ DEBUG [2022-09-28 00:26:46.344] <synchronizeFromSelection-10068>: Finished providing clipboard
+CopyQ DEBUG [2022-09-28 00:26:46.401] <monitorClipboard-9194>: Clipboard unchanged, selection unchanged. Test again in 350ms.
+CopyQ DEBUG [2022-09-28 00:26:46.756] <monitorClipboard-9194>: Clipboard unchanged, selection unchanged.
