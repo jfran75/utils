@@ -4,4 +4,3 @@
 - transmission
 
 #### set static ip from router
-- 
