@@ -10,9 +10,9 @@ services:
       - PGID=1000
       - VERSION=docker
       - TZ=America/Mexico_City
-      - PLEX_CLAIM=
+      - PLEX_CLAIM=claim-kfXoPsBqWx1w3BopRKUM
     volumes:
-      - ./library:/config
-      - ./tvseries:/tv
-      - ./movies:/movies
+      - ~/plex/library:/config
+      - ~/plex/tvseries:/tv
+      - ~/plex/movies:/movies
     restart: unless-stopped
