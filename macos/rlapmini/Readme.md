@@ -1,3 +1,8 @@
+#### [install brew](./1_brew/README.md)
+
+#### [install zsh](./zsh/README.md#install-zsh)
+#### [install powerlevel10k](./zsh/README.md#install-powerlevel10k)
+
 #### Spotlight
 Enable Indexing 
 sudo launchctl load -w /System/Library/LaunchDaemons/com.apple.metadata.mds.plist

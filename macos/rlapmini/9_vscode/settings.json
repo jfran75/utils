@@ -1,12 +1,12 @@
 {
   // "editor.fontFamily": "'Hack Nerd Font', 'Regular'",
-  "editor.fontFamily": "'JetBrains Mono', 'Fira Code', 'Hack', 'Menlo', 'Monaco', 'Courier New', 'monospace'",
+  "telemetry.telemetryLevel": "off",
+  "editor.fontFamily": "'JetBrains Mono', 'Fira Code', 'Hack', 'Meslo', 'Monaco', 'Courier New', 'monospace'",
   "editor.fontLigatures": true,
-  "editor.fontSize": 14,
-  "debug.console.fontSize": 14,
-  "terminal.integrated.fontSize": 14,
+  "editor.fontSize": 16,
+  "debug.console.fontSize": 16,
+  "terminal.integrated.fontSize": 16,
   // "terminal.integrated.fontFamily": "'JetBrains Mono', 'Fira Code', 'Hack', 'Menlo', 'Monaco', 'Courier New', monospace",
-  "terminal.integrated.fontFamily": "MesloLGS NF",
   // "terminal.integrated.fontFamily": "JetBrains Mono",
   // "terminal.integrated.fontFamily": "Fira Code",
   // "terminal.integrated.fontFamily": "Hack",
@@ -14,17 +14,19 @@
   // "terminal.integrated.fontFamily": "Monaco",
   // "terminal.integrated.fontFamily": "Courier New",
   // "terminal.integrated.fontFamily": "monospace",
+  // "terminal.external.osxExec": "/opt/homebrew/bin/kitty",
+  "terminal.integrated.fontFamily": "MesloLGS NF",
   "terminal.integrated.cursorBlinking": true,
   "terminal.integrated.copyOnSelection": true,
-  "terminal.external.osxExec": "iTerm.app",
   "terminal.integrated.cursorStyle": "line",
-  "terminal.integrated.tabs.enabled": false,
   "terminal.integrated.defaultProfile.osx": "zsh",
+  "terminal.integrated.defaultProfile.linux": "zsh",
+  "terminal.external.osxExec": "kitty",
   "terminal.integrated.profiles.osx": {
     "zsh": {
       "icon": "star",
       "path": "/bin/zsh"
-      // ,"args": ["-l"]
+      // ,"args": ["-l"] # for linux
     }
   },
   "explorer.confirmDragAndDrop": false,
@@ -42,7 +44,7 @@
   "editor.scrollbar.horizontal": "hidden",
   "editor.scrollbar.vertical": "hidden",
   "python.terminal.activateEnvironment": false,
-  "editor.cursorBlinking": "solid",
+  "editor.cursorBlinking": "expand",
   "files.exclude": {
     "**/.classpath": true,
     "**/.factorypath": true,
@@ -51,79 +53,12 @@
     "**/.settings": true,
     "**/.vs": true,
     "**/bin": true,
+    // "**/environments": true,
     "**/obj": true
   },
   "workbench.activityBar.visible": true,
   "editor.tokenColorCustomizations": {
-    "[One Dark Pro]": {
-      "textMateRules": [
-        {
-          "scope": [
-            "support.class.component.open.jsx",
-            "support.class.component.close.jsx",
-            "entity.name.function.js"
-          ],
-          "settings": {
-            "foreground": "#61afef"
-          }
-        },
-
-        {
-          "scope": [
-            "variable.other.constant.object.js",
-
-            "punctuation.section.embedded.begin.jsx",
-            "punctuation.section.embedded.end.jsx"
-          ],
-          "settings": {
-            "foreground": "#abb2bf"
-          }
-        },
-        {
-          "scope": ["punctuation.definition.tag.jsx"],
-          "settings": {
-            "foreground": "#5c6370"
-          }
-        },
-        {
-          "scope": [
-            "variable.other.readwrite.js",
-            "variable.other.property.js",
-            "variable.parameter",
-            "variable.other.object.js"
-          ],
-          "settings": {
-            "foreground": "#56b6c2"
-          }
-        },
-        {
-          "scope": ["entity.other.attribute-name.jsx"],
-          "settings": {
-            "foreground": "#e5c07b"
-          }
-        },
-        {
-          "scope": [
-            "keyword.operator.assignment.js",
-            "keyword.operator.assignment.jsx",
-            "string.unquoted.js",
-            "keyword.operator.typeof.js",
-            "meta.embedded.expression.js",
-            "constant.other.object.key.js",
-            "keyword.operator.logical.js"
-          ],
-          "settings": {
-            "foreground": "#c678dd"
-          }
-        },
-        {
-          "scope": ["variable.other.constant.object.js"],
-          "settings": {
-            "foreground": "#e06c75"
-          }
-        }
-      ]
-    }
+    "textMateRules": []
   },
 
   "workbench.colorCustomizations": {
@@ -157,20 +92,18 @@
     }
   },
   "gitlens.advanced.telemetry.enabled": false,
-  "gitlens.currentLine.enabled": false,
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "emmet.showSuggestionsAsSnippets": true,
   "material-icon-theme.showWelcomeMessage": false,
-  "gitlens.codeLens.enabled": false,
-  "workbench.iconTheme": "vscode-icons",
+  "workbench.iconTheme": "material-icon-theme",
   "git.autofetch": true,
   "workbench.startupEditor": "newUntitledFile",
   "python.showStartPage": false,
-  "editor.snippetSuggestions": "bottom",
+  "editor.snippetSuggestions": "top",
   "[json]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "vscode.json-language-features"
   },
   "window.title": "${folderPath}${separator}${activeEditorShort}",
   "[typescript]": {
@@ -194,16 +127,18 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   // "cSpell.userWords": ["roslynator"],
-  "vim.debug.silent": true,
-  "vim.leader": "<space>",
+  // "vim.debug.silent": true,
+  "editor.wordWrap": "on",
+  // "editor.lineNumbers": "relative",
   "vim.easymotion": true,
   "vim.incsearch": true,
   "vim.useSystemClipboard": true,
   "vim.useCtrlKeys": true,
   "vim.hlsearch": true,
-  // "vim.relativenumber": true,
-  "vim.wrap": true,
-  // "vim.highlightedyank.enable": true,
+  "vim.enableNeovim": true,
+  "vim.neovimPath": "/opt/homebrew/bin/nvim",
+  "vim.neovimUseConfigFile": true,
+  "vim.neovimConfigPath": "~/.config/nvim/init.lua",
   "vim.normalModeKeyBindingsNonRecursive": [
     {
       "before": ["<space>", "w"],
@@ -216,26 +151,41 @@
     {
       "before": ["<C-h>"],
       "commands": [":set hlsearch!"]
+    },
+    {
+      "before": ["<leader>", "f"],
+      "commands": ["revealInExplorer"]
+    },
+    {
+      "before": ["<leader>", "h"],
+      "after": ["_"]
+    },
+    {
+      "before": ["<leader>", "l"],
+      "after": ["$"]
     }
   ],
   "vim.insertModeKeyBindings": [
     {
-      "before": ["j", "j"],
+      "before": ["j", "k"],
       "after": ["<Esc>"]
     }
   ],
-  "vim.visualModeKeyBindingsNonRecursive": [],
+  "vim.visualModeKeyBindingsNonRecursive": [
+    {
+      "before": [">"],
+      "after": [">", "g", "v"]
+    },
+    {
+      "before": ["<"],
+      "after": ["<", "g", "v"]
+    }
+  ],
   "vim.handleKeys": {
     "<C-a>": false,
+    "<C-e>": false,
     "<C-f>": false
-  },
-  // "editor.lineNumbers": "relative",
-  "editor.lineNumbers": "on",
-  "editor.wordWrap": "on",
-  "[markdown]": {
-    "editor.defaultFormatter": "DavidAnson.vscode-markdownlint"
-  },
-  "window.zoomLevel": 2,
+  },  
   "vsicons.dontShowNewVersionMessage": true,
   "editor.mouseWheelZoom": true,
   "better-comments.multilineComments": true,
@@ -286,5 +236,31 @@
       "bold": false,
       "italic": false
     }
-  ]
+  ],
+  "extensions.ignoreRecommendations": true,
+  // "editor.linkedEditing": true,
+  "editor.guides.bracketPairs": true,
+  // "breadcrumbs.enabled": true,
+  // "editor.stickyScroll.enabled" true,
+  // "editor.cursorSmoothCaretAnimation": "on",
+  "git.openRepositoryInParentFolders": "always",
+  "application.shellEnvironmentResolutionTimeout": 30,
+  "editor.inlineSuggest.enabled": true,
+  "github.copilot.enable": {
+    "*": true,
+    "yaml": true,
+    "plaintext": false,
+    "markdown": true
+  },
+  // test vscode-neovim
+  "vscode-neovim.neovimExecutablePaths.darwin": "/opt/homebrew/bin/nvim",
+  "vscode-neovim.neovimInitVimPaths.darwin": "/Users/jchinchillas/.config/nvim/init.lua",
+  "vscode-neovim.logOutputToConsole": false,
+  "terminal.integrated.tabFocusMode": false,
+  "workbench.colorTheme": "Visual Studio Dark",
+  "window.zoomLevel": 1
+  // windows subsystem for linux
+  // "extensions.experimental.affinity": {
+  //   "asvetliakov.vscode-neovim": 1
+  // }
 }
