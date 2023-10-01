@@ -114,3 +114,8 @@ brew install --cask brave-browser
 brew info google-chrome
 brew install --cask google-chrome
 ```
+
+``` postman
+brew info postman
+brew install --cask postman
+```
