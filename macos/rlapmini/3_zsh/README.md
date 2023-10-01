@@ -35,3 +35,13 @@ brew tap homebrew/cask-fonts
 brew search '/font-.*-nerd-font/' | awk '{ print $1 }' | xargs -I{} brew install --cask {} || true
 
 ```
+
+### install zsh plugins
+- docs: 
+```
+  git
+  zsh-autosuggestions
+  zsh-syntax-highlighting
+  sudo
+  kube-ps1
+```
