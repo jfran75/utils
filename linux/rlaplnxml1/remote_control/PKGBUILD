@@ -1,0 +1,64 @@
+# Maintainer: Cebtenzzre <cebtenzzre (at) gmail (dot) com>
+
+pkgname=thinlinc-server
+pkgver=4.15.0
+pkgrel=2
+pkgdesc="Cendio ThinLinc Linux remote desktop server"
+arch=('x86_64')
+url="http://www.cendio.com/"
+license=('custom')
+install=${pkgname}.install
+
+depends=('dbus' 'ghostscript' 'glibc' 'hicolor-icon-theme' 'iproute2' 'krb5'
+         'libasyncns' 'libcap' 'libsndfile' 'libx11' 'libxcb' 'libxcrypt-compat'
+         'nspr' 'nss' 'pam' 'procps-ng' 'python' 'python-gobject' 'rtkit'
+         'smtp-forwarder' 'systemd' 'xdg-utils' 'xorg-xauth' 'zlib' 'python-gssapi'
+         'python-six' 'gtk3' 'python-cairo' 'pango' 'python-numpy' 'xorg-xhost' )
+optdepends=('apache: Web integration'
+            'mod_nss: Web integration'
+            'python-markdown: Web Integration'
+            'python-pygments: Web Integration'
+            'nfs-utils: Local drive redirection'
+            'python-ldap: LDAP integration tools',
+            'libpulse: Audio redirection',
+            'libcups: Printer redirection')
+
+_archive_name=tl-${pkgver}-server
+
+source=("https://www.cendio.com/downloads/server/${_archive_name}.zip"
+        'LICENSE'
+        'tlwebaccess.service'
+        'tlwebadm.service')
+sha256sums=('a0d19a66b53e9015e81acab8add05157410efe3b73637e9588cf894db21c7826'
+            '179583f1e2f61a9a75a99bbe8bb988e35a0216fc2ddcbd4c85ad8bdc70c3149e'
+            '3d59ff1c0db479fc4266d67916c9f64050e061b874ccca79a2ac3894f4ba6e25'
+            'ff22ea3833eedb4338eeab6d5ce10fa823b9c78ebab1d47152c073075a6ddeb1')
+
+_extract_dir="extract"
+
+build()
+{
+    cd "${srcdir}/${_archive_name}/packages"
+    mkdir -p "${_extract_dir}"
+
+    for rpm in *${CARCH}*rpm; do
+        bsdtar -C "${_extract_dir}" -xf "${rpm}"
+    done
+
+    cd "${_extract_dir}"
+    rm -Rf "etc/init.d"
+}
+
+package()
+{
+    cd "${srcdir}/${_archive_name}/packages/${_extract_dir}"
+    cp -aR etc/ opt/ usr/ var/ "$pkgdir"
+
+    install -dm755 "$pkgdir"/usr/lib
+    cp -aR lib64/* "$pkgdir"/usr/lib
+
+    cd "$srcdir"
+    install -Dm644 LICENSE             "$pkgdir"/usr/share/licenses/$pkgname/LICENSE
+    install -Dm644 tlwebaccess.service "$pkgdir"/usr/lib/systemd/system/tlwebaccess.service
+    install -Dm644 tlwebadm.service    "$pkgdir"/usr/lib/systemd/system/tlwebadm.service
+}
