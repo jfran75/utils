@@ -24,3 +24,10 @@ set foldlevel=0
 ```
 set foldlevel=5
 ```
+
+### remove all vim files
+```
+rm -rf ~/.vim ~/.vimrc ~/.config/nvim
+rm -rf ~/.local/share/nvim
+
+```

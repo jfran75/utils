@@ -28,7 +28,6 @@ tar -xvf anyconnect-linux64-4.10.05095-predeploy-deb-k9.tar.gz
 tar -xvf anyconnect-linux64-4.10.05095-predeploy-deb-k9.tar.gz
 
 sudo ./vpn_install.sh
-```
 
 ls -la /opt/cisco/anyconnect
 cat /opt/cisco/anyconnect/update.txt
@@ -40,4 +39,18 @@ cat /opt/cisco/anyconnect/profile/VPN-Megacable.xml
 
 /opt/cisco/anyconnect/bin/vpn -s connect Anyconnect.IT.Megacable.com.mx
 
+```
+
+## install vsphere plugin
+```
+# navigate with the browser
+https://10.10.97.129
+
+# download the plugin
+curl -o vsphere-plugin-linux-amd64.zip -LOk https://10.10.97.129/wcp/plugin/linux-amd64/vsphere-plugin.zip
+curl -o vsphere-plugin-macos.zip -LOk https://10.10.97.129/wcp/plugin/darwin-amd64/vsphere-plugin.zip
+curl -o vsphere-plugin-windows.zip -LOk https://10.10.97.129/wcp/plugin/windows-amd64/vsphere-plugin.zip
+
+unzip vsphere-plugin.zip
+mv -v bin/* /usr/local/bin/
 ```

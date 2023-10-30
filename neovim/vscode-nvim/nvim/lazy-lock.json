@@ -1,0 +1,7 @@
+{
+  "gruvbox-material": { "branch": "master", "commit": "d13f4d4e75510e3d798f2ff7561d3c8991220375" },
+  "lazy.nvim": { "branch": "main", "commit": "9788a19ec0b4036028e78aec702634b4b89d3470" },
+  "lualine.nvim": { "branch": "master", "commit": "2248ef254d0a1488a72041cfb45ca9caada6d994" },
+  "nvim-web-devicons": { "branch": "master", "commit": "3af745113ea537f58c4b1573b64a429fefad9e07" },
+  "vim-nightfly-guicolors": { "branch": "master", "commit": "9053e99131731f268258ab4d35d4841c3126ff9a" }
+}
