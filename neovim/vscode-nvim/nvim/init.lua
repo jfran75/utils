@@ -7,9 +7,11 @@ VSCodeCall = vim.fn.VSCodeCall
 THROWAWAY_REGISTER = 'o'
 THROWAWAY_MARK = 'I'
 
-require("shinshi.core")
-require("shinshi.lazy")
-
-if vim.g.vscode then
+if vim.g.vscode == nil then
+  require("shinshi.core")
+  require("shinshi.lazy")
+else
+  require("shinshi.core.options")
+  require("shinshi.lazy")
   require("shinshi.vscode.init")
 end

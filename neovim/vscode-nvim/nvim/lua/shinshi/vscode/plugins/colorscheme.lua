@@ -6,7 +6,8 @@ return {
     config = function()
       -- load the colorscheme here
       --  print("Loaded nightfly theme")
-      vim.cmd([[colorscheme nightfly]])
+      -- vim.cmd([[colorscheme nightfly]])
+      Cmd("colorscheme nightfly")
     end,
   },
 }

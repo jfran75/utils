@@ -1,158 +1,80 @@
-function Center_screen() Cmd("call <SNR>3_reveal('center', 0)") end
-
-function Top_screen() Cmd("call <SNR>3_reveal('top', 0)") end
-
-function Bottom_screen() Cmd("call <SNR>3_reveal('bottom', 0)") end
-
-function Move_to_top_screen()
-	Cmd("call <SNR>3_moveCursor('top')")
+function FeedKeys(keys)
+	vim.api.nvim_feedkeys(keys, "n", false)
 end
 
-function Move_to_bottom_screen()
-	Cmd("call <SNR>3_moveCursor('bottom')")
+function FeedKeysInt(keys)
+	local feedable_keys = vim.api.nvim_replace_termcodes(keys, true, false, true)
+	vim.api.nvim_feedkeys(feedable_keys, "n", true)
 end
 
-function Scroll_line_down() VSCodeCall("scrollLineDown") end
-function Scroll_line_up() VSCodeCall("scrollLineUp") end
-
-function Vscode_ctrl_d() VSCodeNotify("vscode-neovim.ctrl-d") end
-function Vscode_ctrl_u() VSCodeNotify("vscode-neovim.ctrl-u") end
-
-function Move_to_bottom_screen__center_screen()
-	Move_to_bottom_screen()
-	Center_screen()
+function EscapeForLiteralSearch(input)
+	input = string.gsub(input, '\\', '\\\\')
+	input = string.gsub(input, '\n', '\\n')
+	input = string.gsub(input, '/', '\\/')
+	return input
 end
 
-function Move_to_top_screen__center_screen()
-	Move_to_top_screen()
-	Center_screen()
+function EscapeFromLiteralSearch(input)
+	if string.sub(input, 1, 2) ~= "\\V" then return input end
+	input = string.sub(input, 3)
+	input = string.gsub(input, '\\/', '/')
+	input = string.gsub(input, '\\\\', '\\')
+	return input
 end
 
-function Trim_trailing_whitespace()
-	VSCodeCall("editor.action.trimTrailingWhitespace")
+function EscapeFromRegexSearch(input)
+	if string.sub(input, 1, 2) ~= '\\v' then return input end
+	return string.sub(input, 3)
 end
 
-function Save() VSCodeCall("workbench.action.files.save") end
-
-function Save_no_format()
-	VSCodeCall("workbench.action.files.saveWithoutFormatting")
+function GetChar(prompt)
+	vim.api.nvim_echo({ { prompt, "Input" } }, true, {})
+	local char = vim.fn.getcharstr()
+	-- That's the escape character (<Esc>). Not sure how to specify it smarter
+	-- In other words, if you pressed escape, we return nil
+	if char == '' then
+		char = nil
+	end
+	return char
 end
 
-function Trim__save__no_format()
-	Trim_trailing_whitespace()
-	Save_no_format()
-end
-
-function Trim__save__no_highlight()
-	Trim_trailing_whitespace()
-	Save()
-	Remove_highlighting()
-end
-
-function Format()
-	VSCodeCall("editor.action.formatDocument")
-	print("formatted!")
-end
-
-function Trim__save__format()
-	Trim_trailing_whitespace()
-	Format()
-	Save()
-end
-
-function Reveal_definition_aside()
-	VSCodeNotify("editor.action.revealDefinitionAside")
-end
-
-function Go_to_implementation()
-	VSCodeNotify("editor.action.goToImplementation")
-end
-
-function Go_to_reference()
-	VSCodeNotify("editor.action.goToReferences")
-end
-
-function Rename_symbol()
-	VSCodeNotify("editor.action.rename")
-end
-
-function Outdent()
-	---@diagnostic disable-next-line: unused-local
-	for i = 1, vim.v.count1 do
-		VSCodeNotify("editor.action.outdentLines")
+function Validate_register(register)
+	if register == 'q' then
+		return '+'
+	elseif register == 'w' then
+		return '0'
+	elseif register == "'" then
+		return '"'
+	else
+		return register
 	end
 end
 
-function Indent()
-	---@diagnostic disable-next-line: unused-local
-	for i = 1, vim.v.count1 do
-		VSCodeNotify("editor.action.indentLines")
+function GetBool(message)
+	local char = GetChar(message .. " (f/d):")
+	local bool
+	if char == 'f' then
+		bool = true
+	elseif char == 'd' then
+		bool = false
+	else
+		print("press f for true, d for false")
+		return nil
 	end
+	return bool
 end
 
-function Outdent_vis() VSCodeNotify("editor.action.outdentLines", false) end
+function Remove_highlighting() Cmd("noh") end
 
-function Indent_vis() VSCodeNotify("editor.action.indentLines", false) end
+function Toggle_highlight_search() Cmd("set hlsearch!") end
 
-function Comment() VSCodeNotify("editor.action.commentLine") end
+function ReverseTable(table)
+	local reversed = setmetatable({}, { __index = table })
+	local length = #table
 
-function Convert_to_spaces() VSCodeNotify("editor.action.indentationToSpaces") end
+	for i = length, 1, -1 do
+		table.insert(reversed, table[i])
+	end
 
-function Convert_to_tabs() VSCodeNotify("editor.action.indentationToTabs") end
-
-function Indent_with_spaces() VSCodeNotify("editor.action.indentUsingSpaces") end
-
-function Indent_with_tabs() VSCodeNotify("editor.action.indentUsingTabs") end
-
-function CloseEditor() VSCodeNotify("workbench.action.closeActiveEditor") end
-
-function UndoCloseEditor() VSCodeNotify("workbench.action.reopenClosedEditor") end
-
-function Git_stage_file()
-	Trim_trailing_whitespace()
-	Save()
-	VSCodeNotify("git.stage")
+	return reversed
 end
-
-function Git_unstage_file()
-	Save()
-	VSCodeNotify("git.unstage")
-end
-
-function Git_revert_change()
-	VSCodeNotify("git.revertSelectedRanges")
-end
-
-function Git_stage_change()
-	VSCodeNotify("git.stageSelectedRanges")
-end
-
-function Git_unstage_change() VSCodeNotify("git.unstageSelectedRanges") end
-
-function Git_open_changes() VSCodeNotify("git.openChange") end
-
-function Git_open_all_changes() VSCodeNotify("git.openAllChanges") end
-
-function Accept_merge_both() VSCodeNotify("merge-conflict.accept.both") end
-
-function Accept_merge_all_both() VSCodeNotify("merge-conflict.accept.all-both") end
-
-function Accept_merge_current() VSCodeNotify("merge-conflict.accept.current") end
-
-function Accept_merge_all_current() VSCodeNotify("merge-conflict.accept.all-current") end
-
-function Accept_merge_incoming() VSCodeNotify("merge-conflict.accept.incoming") end
-
-function Accept_merge_all_incoming() VSCodeNotify("merge-conflict.accept.all-incoming") end
-
-function Accept_merge_selection() VSCodeNotify("merge-conflict.accept.selection") end
-
-function Codesnap() VSCodeNotify("codesnap.start", true) end
-
-function Comment_vis() VSCodeNotify("editor.action.commentLine", false) end
-
-function Toggle_breakpoint() VSCodeNotify("editor.debug.action.toggleBreakpoint") end
-
-function Copy_path() VSCodeNotify("copyFilePath") end
-
-function Copy_relative_path() VSCodeNotify("copyRelativeFilePath") end

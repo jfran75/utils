@@ -1,4 +1,13 @@
+Cmd("let g:sneak#use_ic_scs = 1")
+Cmd("highlight link Sneak None")
+Cmd("packadd! matchit")
+
 require('shinshi.vscode.functions')
+require('shinshi.vscode.vscode_functions')
 require('shinshi.vscode.mappings')
 require('shinshi.vscode.remaps')
+require('shinshi.vscode.features')
+require('shinshi.vscode.text-objects-mappings')
+require('shinshi.vscode.search.functions')
+require('shinshi.vscode.search.mappings')
 print("VSCode mode enabled")
