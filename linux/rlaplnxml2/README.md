@@ -4,6 +4,7 @@
 nvim /Users/jchinchillas/.ssh/known_hosts
 ssh root@192.168.100.4
 ssh jchinchillas@192.168.100.4
+ssh jchinchillas@rlaplnxml2
 rlaplnxml2
 ping rlaplnxml2
 ping -c 3 192.168.100.4
@@ -76,7 +77,8 @@ makepkg -si
 ## check displays(monitors)
 ```
 yay -S wlr-randr
-wlr-randr
+paru -S wlr-randr
+sudo wlr-randr
 ```
 
 ## hyprland

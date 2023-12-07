@@ -16,8 +16,6 @@ sudo nvim /etc/docker/daemon.json
   "memory": "2G"
 }
 
-
-
 journalctl -xeu docker.service
 sudo reboot
 
@@ -35,6 +33,3 @@ docker compose version
 ping registry.sfycnextgen.com.mx
 docker login registry.sfycnextgen.com.mx
 docker pull registry.sfycnextgen.com.mx/bases/base-node:16.14.10-alpine
-
-
-

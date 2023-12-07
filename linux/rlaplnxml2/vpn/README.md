@@ -1,6 +1,6 @@
 ## install vpn mega
 ```
-ssh jchinchillas@rlaplnxml1 
+ssh jchinchillas@rlaplnxml2
 ls -la /opt
 ls -la /opt/cisco
 ls -la /opt/cisco/anyconnect
@@ -13,18 +13,18 @@ sudo reboot now
 ls -la /opt/.cisco/certificates/ca
 
 ls -la ~/repos
-ls -la ~/repos/anyconnect-linux64-4.10.05095
-ls -la ~/repos/anyconnect-linux64-4.10.05095/vpn
-cd ~/repos/anyconnect-linux64-4.10.05095/vpn
+ls -la ~/repos/vpn_mega/vpn_mega/anyconnect-linux64-4.10.05095
+ls -la ~/repos/vpn_mega/anyconnect-linux64-4.10.05095/vpn
+cd ~/repos/vpn_mega/anyconnect-linux64-4.10.05095/vpn
 sudo ./vpn_install.sh
 sudo ./vpn_uninstall.sh
 
-cat /opt/cisco/anyconnect/bin/manifesttool_vpn
-
-ls -la ~/repos/anyconnect-linux64-4.10.05095/vpn/
-scp ~/Downloads/anyconnect-linux64-4.10.05095-predeploy-k9.tar.gz jchinchillas@rlaplnxml1:~/repos
-scp ~/Downloads/anyconnect-linux64-4.10.05095-predeploy-deb-k9.tar.gz jchinchillas@rlaplnxml1:~/repos
-cd ~/repos/anyconnect-linux64-4.10.05095/vpn/
+ls -la ~/repos/vpn_mega/anyconnect-linux64-4.10.05095/vpn/
+scp ~/Downloads/anyconnect-linux64-4.10.05095-predeploy-k9.tar.gz jchinchillas@rlaplnxml2:~/repos/vpn_mega
+scp ~/Downloads/anyconnect-linux64-4.10.05095-predeploy-deb-k9.tar.gz jchinchillas@rlaplnxml2:~/repos/vpn_mega
+cd ~/repos/vpn_mega
+la ~/repos/vpn_mega
+# rm -rf anyconnect-linux64-4.10.05095
 tar -xvf anyconnect-linux64-4.10.05095-predeploy-k9.tar.gz
 tar -xvf anyconnect-linux64-4.10.05095-predeploy-deb-k9.tar.gz
 
