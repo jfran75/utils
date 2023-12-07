@@ -13,7 +13,8 @@ services:
     ports:
       - 11434:11434
     volumes:
-      - ollama:/root/.ollama
+      - ./ollama:/root/.ollama
+      # - ./ollama/models:/ollama/models
     # environment:
     #   - OLLAMA_MODELS=/ollama/models
 # La version actual de chatbot-ollama no descarga el modelo automaticamente
