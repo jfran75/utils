@@ -10,10 +10,12 @@ services:
       - OLLAMA_HOST=http://ollama:11434
   ollama:
     image: ollama/ollama:latest
+    ports:
+      - 11434:11434
     volumes:
-      - ./ollama/models:/ollama/models
-    environment:
-      - OLLAMA_MODELS=/ollama/models
+      - ollama:/root/.ollama
+    # environment:
+    #   - OLLAMA_MODELS=/ollama/models
 # La version actual de chatbot-ollama no descarga el modelo automaticamente
 # Vas a tener que correr este comando cada vez que necesites un modelo nuevo:
 # docker-compose exec ollama ollama pull llama2
