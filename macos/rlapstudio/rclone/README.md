@@ -1,4 +1,5 @@
 # rclone google drive
+- help: tldr rclone
 
 ## init the initial config
 rclone config
@@ -31,4 +32,25 @@ sudo chmod +x rclonescipt.sh
 la rclonescipt.sh
 nvim ~/.zshrc
 alias gsync="/Volumes/local-data/repos/utils/macos/rlapstudio/rclone/rclonescript.sh"
+```
+
+# rclone commands
+```
+- List contents of a directory on an rclone remote:
+    rclone lsf rapiduslabs:path/to/directory
+
+- Copy file or directory from local source to remote destination:
+    rclone copy path/to/source_file_or_directory rapiduslabs:path/to/destination_directory
+
+- Copy file or directory from remote source to local destination:
+    rclone copy rapiduslabs:path/to/source_file_or_directory path/to/destination_directory
+
+- Sync local source to remote destination, changing the destination only:
+    rclone sync path/to/file_or_directory rapiduslabs:path/to/directory
+
+- Move file or directory from local source to remote destination:
+    rclone move path/to/file_or_directory rapiduslabs:path/to/directory
+
+- Delete remote file or directory (use `--dry-run` to test, remove it to actually delete):
+    rclone --dry-run delete rapiduslabs:path/to/file_or_directory
 ```
