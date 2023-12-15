@@ -1,4 +1,5 @@
 # utils
+
 ```
 my utils neovim
 
@@ -27,14 +28,14 @@ ab {abreviaton name} text
 ex: iab ff simona
 
 ### folding
-- docs: 
+- docs:
 set foldmethod=syntax
 set foldmethod=indent
 
         render :text => "hello"
 
 
-### register        
+### register
 
 <id>simona</id>
 
@@ -54,16 +55,10 @@ otro
 	includecorrecto "#include "unistd.h"
 	includecorrecto "#include "stdlib."
 
-^i#includecorrecto "$a"€kl€kbj€kbj
-
-
-qC/word<correcto>q
-
-
-	include main.one 
-	include main.two 
-	include main.three 
-	include main.four 
+	include main.one
+	include main.two
+	include main.three
+	include main.four
 
 	This is a   long line 	short 	Any other   long line
 
@@ -98,42 +93,45 @@ b_array[i]->s_prev = a_array[i]->s_prev;
 
 # utils
 ```
+
 my utils neovim
 
 # tabs
+
 vmap > >gv
 vmap < <gv
 vmap <Tab> >gv
 vmap <S-Tab> <gv
 
 # autocompletion
+
 imap <Tab> <C-N>
 imap <S-Tab> <C-N>
-
 
 vunmap >
 
 map! <Leader>f <Esc>gUiw`]a
 
 # abreviations
+
 ab {abreviaton name} text
 
 ex: iab ff simona
 
 ### folding
-- docs: 
-set foldmethod=syntax
-set foldmethod=indent
 
-        render :text => "hello"
+- docs:
+  set foldmethod=syntax
+  set foldmethod=indent
 
+          render :text => "hello"
 
-### register        
+### register
 
 <id>simona</id>
 
-
 ### plugins
+
 tpope is the developer
 
 surround
@@ -141,9 +139,11 @@ ragtag
 <Right><Up><Up
 
 cco
->
-_dataSource
+
+> \_dataSource
+
 # utils
+
 ```
 my utils neovim
 
@@ -168,14 +168,14 @@ ab {abreviaton name} text
 ex: iab ff simona
 
 ### folding
-- docs: 
+- docs:
 set foldmethod=syntax
 set foldmethod=indent
 
         render :text => "hello"
 
 
-### register        
+### register
 
 <id>simona</id>
 
@@ -198,13 +198,14 @@ _dataSource
 _dataSource
 
 
-	The financial results for 2009 are better 
-	than for 2008.  The income increased by 50%, 
-	even though 2011 had more rain than 2007. 
-			2006		2006 
+	The financial results for 2009 are better
+	than for 2008.  The income increased by 50%,
+	even though 2011 had more rain than 2007.
+			2006		2006
 	income		45,403		66,234
 
 
-	3.  item four 
-	3.  item five 
+	3.  item four
+	3.  item five
 	3.  item six
+```

@@ -20,7 +20,9 @@ mkdir ollama # you must have this folder before run docker compose
 docker compose ps
 docker compose up
 docker compose up -d
-docker-compose exec ollama ollama pull llama2
+
+docker-compose exec ollama ollama pull llama2 ## pull model
+
 docker compose down
 docker compose restart
 docker compose logs

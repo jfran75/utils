@@ -12,7 +12,7 @@
 ## Terminal CLI
 
 - [ollama](./ollama/README.md)
-- [autogen](https://github.com/microsoft/autogen)
+- [autogen](./autogen/README.md)
 - [llama.cpp](https://github.com/ggerganov/llama.cpp)
 - [open-interpreter](https://github.com/KillianLucas/open-interpreter)
 - [self-operating-computer](https://github.com/OthersideAI/self-operating-computer)

@@ -1,0 +1,103 @@
+k9s:
+  liveViewAutoRefresh: false
+  refreshRate: 2
+  maxConnRetry: 5
+  enableMouse: false
+  enableImageScan: false
+  headless: false
+  logoless: false
+  crumbsless: false
+  readOnly: false
+  noExitOnCtrlC: false
+  noIcons: false
+  shellPod:
+    image: busybox:1.35.0
+    namespace: default
+    limits:
+      cpu: 100m
+      memory: 100Mi
+  skipLatestRevCheck: false
+  logger:
+    tail: 100
+    buffer: 5000
+    sinceSeconds: 60
+    fullScreenLogs: false
+    textWrap: false
+    showTime: false
+  currentContext: dev-services-1-23
+  currentCluster: 10.10.97.143
+  keepMissingClusters: false
+  clusters:
+    10.10.97.75:
+      namespace:
+        active: sfyc
+        lockFavorites: false
+        favorites:
+        - sfyc
+        - default
+      view:
+        active: dr
+      featureGates:
+        nodeShell: false
+      portForwardAddress: localhost
+    10.10.97.77:
+      namespace:
+        active: sfyc
+        lockFavorites: false
+        favorites:
+        - all
+        - redis
+        - sfyc
+        - default
+      view:
+        active: dr
+      featureGates:
+        nodeShell: false
+      portForwardAddress: localhost
+    10.10.97.134:
+      namespace:
+        active: istio-apps
+        lockFavorites: false
+        favorites:
+        - istio-apps
+        - elastic-system
+        - default
+      view:
+        active: statefulsets
+      featureGates:
+        nodeShell: false
+      portForwardAddress: localhost
+    10.10.97.135:
+      namespace:
+        active: sfyc
+        lockFavorites: false
+        favorites:
+        - sfyc
+        - default
+      view:
+        active: deploy
+      featureGates:
+        nodeShell: false
+      portForwardAddress: localhost
+    10.10.97.143:
+      namespace:
+        active: istio-apps
+        lockFavorites: false
+        favorites:
+        - all
+        - istio-apps
+        - default
+      view:
+        active: pods
+      featureGates:
+        nodeShell: false
+      portForwardAddress: localhost
+  thresholds:
+    cpu:
+      critical: 90
+      warn: 70
+    memory:
+      critical: 90
+      warn: 70
+  screenDumpDir: /var/folders/jm/nlc42psd4q15s9psv0h8qnch0000gn/T/k9s-screens-jchinchillas
+  disablePodCounting: false
