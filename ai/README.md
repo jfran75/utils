@@ -3,11 +3,12 @@
 - [hugging face](https://huggingface.co/)
 - AI Community: The platform where the machine learning community collaborates on models, datasets, and applications.
 
-## WebUI
+## UI
 
 - [Text Generation WebUI - Oobabooga](./oobabooga_web_ui/README.md)
   - https://github.com/oobabooga/text-generation-webui
   - [how to install](https://www.youtube.com/watch?v=btmVhRuoLkc)
+  - [lm studio](https://lmstudio.ai/)
 
 ## Terminal CLI
 
