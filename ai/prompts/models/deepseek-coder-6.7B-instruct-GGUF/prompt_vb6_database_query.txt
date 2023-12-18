@@ -1,0 +1,8 @@
+with the below vb6 code block, convert it to csharp using the next ### Rules:
+### Rules:
+  - the connection string is in the variable named _connectionString.
+    - dont assume that the values for the sql query parameters exists. change the signature to the definition method for accept it.     
+  - dont create a namespace o class definition.
+  - dont give an explanation only return Response.
+```vb6 code block
+```
