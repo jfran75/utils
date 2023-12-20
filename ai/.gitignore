@@ -1,6 +1,3 @@
-llama
-llama.cpp
-meta_models
 llama.cpp/llamaapp.cpp/*
 meta_models/*
 llm_models/*
