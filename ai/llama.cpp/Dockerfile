@@ -20,5 +20,10 @@ ENV PATH="/miniconda/bin:${PATH}"
 RUN echo ". /miniconda/etc/profile.d/conda.sh" >> ~/.bashrc && \
   echo "conda activate base" >> ~/.bashrc
 
+RUN git clone https://github.com/ggerganov/llama.cpp.git ~/llama.cpp && \
+  cd ~/llama.cpp && \
+  make && \
+  python3 -m pip install -r requirements.txt
+
 # Set the entrypoint to bash
 ENTRYPOINT ["tail", "-f", "/dev/null"]

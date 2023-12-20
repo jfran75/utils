@@ -1,0 +1,7 @@
+# ignore everything
+**
+llama.cpp/llamaapp.cpp/
+
+# except llm_models folder
+!llm_models/
+!llama.cpp/
