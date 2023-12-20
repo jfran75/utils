@@ -1,3 +1,14 @@
+# tasks
+- [] create a new folder structure for the models and the code
+- [] run the mixtral models at rlaplnxml2
+- [] test the TheBloke models
+  - [] deepseek-coder-6.7B-instruct-GGUF, run at rlapstudio
+  - [] Mixtral-8x7B-Instruct-v0.1-GGUF, run at rlaplnxml2
+  - [] Mixtral-8x7B-v0.1-GGUF, run at rlaplnxml2
+- [] test the Trelis models 
+  - [] Trelis/deepseek-coder-33b-instruct-function-calling-v2, test at rlaplnxml2 and rlapstudio
+
+
 # examples with python 
 # conda commands
 ```bash

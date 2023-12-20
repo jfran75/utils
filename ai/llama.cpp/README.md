@@ -79,29 +79,29 @@ python3 convert.py --outfile models/13B/ggml-model-f16.bin --outtype f16 ../meta
 
 ```
 
-## questions test
+## run llama.cpp server
 ```
-can you write a javascript function to find prime numbers ?
-translate to c#
-translate to rust
+export MODEL_FOLDER_PATH=/Volumes/local-data/.cache/lm-studio/models/TheBloke/deepseek-coder-6.7B-instruct-GGUF
+export MODEL_NAME=deepseek-coder-6.7b-instruct.Q8_0.gguf
+export MODEL_PATH=$MODEL_FOLDER_PATH/$MODEL_NAME
+export PROMPT_FOLDER_PATH=/Volumes/local-data/repos/utils/ai/prompts/TheBloke/deepseek-coder-6.7B-instruct-GGUF/vb6_select_clause
+export PROMPT_NAME=prompt_vb6_select_clause1.txt
+export PROMPT_PATH=$PROMPT_FOLDER_PATH/$PROMPT_NAME
+echo $MODEL_PATH
+echo $PROMPT_PATH
+la $MODEL_PATH
+la $PROMPT_PATH
 
-
-do you have aknowledge of the following languages visual basic 6 ?
-
-
-./llamaapp.cpp/main -m /Volumes/local-data/.cache/lm-studio/models/TheBloke/deepseek-coder-6.7B-instruct-GGUF/deepseek-coder-6.7b-instruct.Q8_0.gguf --color --instruct --temp 0.0 --top_k 40 --top_p 0.95 --ctx_size 2048 --n_predict -1 --keep -1 -i -r "User:" -f ../prompts/models/deepseek-coder-6.7B-instruct-GGUF/prompt_vb6.txt
+# run sinle prompt
+./llamaapp.cpp/main -m $MODEL_PATH --color --instruct --temp 0.0 --top_k 40 --top_p 0.95 --ctx_size 2048 --n_predict -1 --keep -1 -i -r "User:" -f $PROMPT_PATH
 
 ## run the server
-./llamaapp.cpp/server -m /Volumes/local-data/.cache/lm-studio/models/TheBloke/deepseek-coder-6.7B-instruct-GGUF/deepseek-coder-6.7b-instruct.Q8_0.gguf --ctx_size 2048
-
-./llamaapp.cpp/server -m /Volumes/local-data/.cache/lm-studio/models/Safurai/Safurai-Csharp-34B-GGUF/safurai-csharp-34b.gguf.q4_k_m.bin --ctx_size 2048
-
-scp -r /Volumes/local-data/.cache/lm-studio/models/Safurai jchinchillas@rlaplnxml2:~/proyectos/rlab/utils/ai/llm_models
-scp -r /Volumes/local-data/.cache/lm-studio/models/TheBloke jchinchillas@rlaplnxml2:~/proyectos/rlab/utils/ai/llm_models
-
+./llamaapp.cpp/server -m $MODEL_PATH  --ctx_size 2048
 
 ```
-mkdir -p ~/miniconda3
-wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ~/miniconda3/miniconda.sh
-bash ~/miniconda3/miniconda.sh -b -u -p ~/miniconda3
-rm -rf ~/miniconda3/miniconda.sh
+
+## copy the models to rlaplnxml2
+```
+scp -r /Volumes/local-data/.cache/lm-studio/models/Safurai jchinchillas@rlaplnxml2:~/proyectos/rlab/utils/ai/llm_models
+scp -r /Volumes/local-data/.cache/lm-studio/models/TheBloke jchinchillas@rlaplnxml2:~/proyectos/rlab/utils/ai/llm_models
+```

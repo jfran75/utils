@@ -1,7 +1,0 @@
-with the below visual basic 6 code block, convert it to csharp using the next ### Rules:
-### Rules:
-    - dont create a namespace o class definition.
-    - dont give an explanation only return Response.
-    - remove the comments.
-```vb6 code block
-```
