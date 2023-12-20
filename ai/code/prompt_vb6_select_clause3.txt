@@ -1,0 +1,105 @@
+### Instruction:
+with the below vb6 code block enclosed in backticks, convert it to csharp using the next Rules:
+convert all the code line by line.
+convert all the Select Case options.
+dont create a namespace o class definition.
+dont give an explanation only return Response.
+remove unnecessary comments and whitespace for clarity.
+if something don't exist assumes that all those declarations are present in the original VB6 code.
+```vb6 code block
+  Select Case xTabla
+    Case aa_atencioninmediata
+      strCampo = ""
+      strTabla = "aa_atencioninmediata"
+    Case aa_citas
+      strCampo = "idcita"
+      strTabla = "aa_citas"
+    Case aa_citaslog
+      strCampo = ""
+      strTabla = "aa_citaslog"
+    Case aa_colonias
+      strCampo = ""
+      strTabla = "aa_colonias"
+    Case aa_cuadrillas
+      strCampo = ""
+      strTabla = "aa_cuadrillas"
+    Case aa_definiciontrabajos
+      strCampo = "iddeftrabajo"
+      strTabla = "aa_definiciontrabajos"
+    Case aa_deftrabajos
+      strCampo = "idgrupo"
+      strTabla = "aa_deftrabajos"
+    Case aa_diasnohabiles
+      strCampo = ""
+      strTabla = "aa_diasnohabiles"
+    Case aa_grupos
+      strCampo = "idgrupo"
+      strTabla = "aa_grupos"
+    Case aa_grupos_apoyo
+      strCampo = ""
+      strTabla = "aa_grupos_apoyo"
+    Case aa_gruposradio
+      strCampo = "idgruporadio"
+      strTabla = "aa_gruposradio"
+    Case aa_grupos_trabajos
+      strCampo = ""
+      strTabla = "aa_grupos_trabajos"
+    Case aa_observaciones
+      strCampo = ""
+      strTabla = "aa_observaciones"
+    Case aa_ordenes_trabajo
+      strCampo = "idordentrabajo"
+      strTabla = "aa_ordenes_trabajo"
+    Case aa_preferencias
+      strCampo = ""
+      strTabla = "aa_preferencias"
+    Case aa_preliminar
+      strCampo = ""
+      strTabla = "aa_preliminar"
+    Case aa_preliminartrabajos
+      strCampo = ""
+      strTabla = "aa_preliminartrabajos"
+    Case aa_Prioridad_Servicios
+      strCampo = ""
+      strTabla = "aa_Prioridad_Servicios"
+    Case aa_prioridades_nivel
+      strCampo = "idnivel"
+      strTabla = "aa_prioridades_nivel"
+    Case aa_prioridadesdescripcion
+      strCampo = "idprioridad"
+      strTabla = "aa_prioridadesdescripcion"
+    Case aa_servicios
+      strCampo = ""
+      strTabla = "aa_servicios"
+    Case aa_tiposcuadrilla
+      strCampo = ""
+      strTabla = "aa_tiposcuadrilla"
+    Case aa_tiposgrupo
+      strCampo = ""
+      strTabla = "aa_tiposgrupo"
+    Case AA_Trabajos
+      strCampo = "idtrabajo"
+      strTabla = "aa_trabajos"
+    Case aa_gruposradio
+      strCampo = ""
+      strTabla = "aa_gruposradio"
+    Case aa_gruposradiocuadrillas
+      strCampo = ""
+      strTabla = "aa_gruposradiocuadrillas"
+    Case aa_equipos_radio
+      strCampo = "idequipo"
+      strTabla = "aa_equipos_radio"
+    Case aa_equipos_usuario
+      strCampo = "idusuario"
+      strTabla = "aa_equipos_usuario"
+    Case aa_equipos_usuario_grupos
+      strCampo = ""
+      strTabla = "aa_equipos_usuario_grupos"
+    Case aa_cuadrillas_excepcion
+      strCampo = ""
+      strTabla = "aa_cuadrillas_excepcion"
+    Case aa_cuadrillas_instalacion_inmediata
+      strCampo = ""
+      strTabla = "aa_cuadrillas_instalacion_inmediata"
+  End Select
+```

@@ -9,6 +9,16 @@
   - https://github.com/oobabooga/text-generation-webui
   - [how to install](https://www.youtube.com/watch?v=btmVhRuoLkc)
   - [lm studio](https://lmstudio.ai/)
+    - cache paths:
+      - models: /Volumes/local-data/.cache/lm-studio/models
+      - sessions: /Volumes/local-data/.cache/lm-studio/session_cache/
+      ```
+        la /Volumes/local-data/.cache/lm-studio/models
+        tree /Volumes/local-data/.cache/lm-studio/models
+      ```
+
+## vector databases
+- [pinecon](./pinecone/README.md)
 
 ## Terminal CLI
 
@@ -19,8 +29,11 @@
 - [self-operating-computer](https://github.com/OthersideAI/self-operating-computer)
 - [aider](https://github.com/paul-gauthier/aider)
 
-## Whats next?
+## For training
+- [LoRA](https://huggingface.co/docs/diffusers/training/lora)
 
+
+## Whats next?
 - [gpt-engineer](https://github.com/AntonOsika/gpt-engineer)
 - [MetaGPT](https://github.com/geekan/MetaGPT)
 - metagpt
@@ -39,6 +52,14 @@
 - [Audiocraft](https://github.com/facebookresearch/audiocraft)
 - [Typebot](https://github.com/baptisteArno/typebot.io)
 
+# investigate
+- llava llm/gpt
+  - https://www.microsoft.com/en-us/research/project/llava-large-language-and-vision-assistant/
+  - https://github.com/haotian-liu/LLaVA
+  - https://github.com/spdustin/ChatGPT-AutoExpert
+
+
+
 ## screenshot-to-code
 
 - [screenshot-to-code](https://github.com/abi/screenshot-to-code)
@@ -50,3 +71,5 @@
 ## models to check
 
 - Safurai/Safurai-Csharp-34B
+
+## [run pods with gpu](https://www.runpod.io)

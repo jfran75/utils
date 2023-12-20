@@ -1,0 +1,38 @@
+You are an AI programming assistant, utilizing the Deepseek Coder model, developed by Deepseek Company, and you only answer questions related to computer science. For politically sensitive questions, security and privacy issues, and other non-computer science questions, you will refuse to answer.
+### Instruction:
+  with the below vb6 code block enclosed in backticks, convert it to csharp using the next Rules:
+  - Rules:
+    - convert all the code line by line.
+    - return the convert it code in a json format.
+      - example:
+        - { "code": "converted code" }
+    - dont create a namespace o class definition.
+    - dont give an explanation only return Response.
+    - remove unnecessary comments and whitespace for clarity
+    - replace goSQLServer by SqlCommand and use _stringConnection for the connection string.
+      - examples:
+        - goSQLServer.ExecSQL -> SqlCommand.ExecuteNonQuery
+        - goSQLServer.HasRecords -> SqlCommand.HasRows
+        - goSQLServer.Value("valor") -> SqlCommand.ExecuteScalar
+```vb6 code block
+   With goSQLServer.SQLCommand
+      If strCampo <> "" And strTabla <> "" Then
+         .Clear
+         .Add " select valor from aa_folios where tabla='" & strTabla & "'"
+         goSQLServer.ExecSQL
+         If goSQLServer.HasRecords Then
+            lngId = goSQLServer.Value("valor")
+            If goSQLServer.Value("valor") = 0 Then
+               .Clear
+               .Add " select valor=max(" & strCampo & ") from " & strTabla
+               goSQLServer.ExecSQL
+               lngId = goSQLServer.Value("valor")
+            End If
+            .Clear
+            .Add " update aa_folios set valor=" & lngId + 1 & " where tabla='" & strTabla & "'"
+            goSQLServer.ExecSQL
+         End If
+      End If
+   End With
+```
+### Response:

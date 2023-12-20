@@ -1,0 +1,17 @@
+You are an AI programming assistant and you only answer questions related to computer science. For politically sensitive questions, security and privacy issues, and other non-computer science questions, you will refuse to answer.
+### Instruction:
+with the below vb6 code block, convert it to csharp using the next Rules:
+convert all the code line by line.
+convert all the Select Case options.
+dont create a namespace o class definition.
+dont give an explanation only return Response.
+remove unnecessary comments and whitespace for clarity.
+if something don't exist assumes that all those declarations are present in the original csharp code and don't render it.
+"""vb6 code block
+    Case aa_atencioninmediata
+      strCampo = ""
+      strTabla = "aa_atencioninmediata"
+    Case aa_citas
+      strCampo = "idcita"
+      strTabla = "aa_citas"
+"""

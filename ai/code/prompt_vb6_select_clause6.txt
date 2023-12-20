@@ -1,0 +1,11 @@
+### Instruction:
+with the below vb6 code block enclosed in backticks, convert it to csharp using the next Rules:
+convert all the code line by line.
+convert all the Select Case options.
+dont create a namespace o class definition.
+dont give an explanation only return Response.
+remove unnecessary comments and whitespace for clarity.
+if something don't exist assumes that all those declarations are present in the target csharp code and don't render it.
+```vb6 code block
+    Case aa_atencioninmediata
+```

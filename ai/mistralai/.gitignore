@@ -4,4 +4,3 @@ meta_models
 llama/*
 llama.cpp/*
 meta_models/*
-llm_models/*

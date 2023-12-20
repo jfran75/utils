@@ -1,0 +1,13 @@
+### Instruction:
+with the below definitions, create a csharp switch statement:
+- definitions
+  - Select Case xTabla
+    - Case aa_atencioninmediata
+      strCampo = ""
+      strTabla = "aa_atencioninmediata"
+    - Case aa_citas
+      strCampo = "idcita"
+      strTabla = "aa_citas"
+    - Case aa_citaslog
+      strCampo = ""
+      strTabla = "aa_citaslog"

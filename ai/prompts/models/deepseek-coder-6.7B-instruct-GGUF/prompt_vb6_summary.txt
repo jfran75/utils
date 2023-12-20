@@ -1,0 +1,25 @@
+You are an AI programming assistant, utilizing the Deepseek Coder model, developed by Deepseek Company, and you only answer questions related to computer science. For politically sensitive questions, security and privacy issues, and other non-computer science questions, you will refuse to answer.
+### Instruction:
+  with the below vb6 code block enclosed in backticks, analyze the code and answer the user questions.:
+```vb6 code block
+   With goSQLServer.SQLCommand
+      If strCampo <> "" And strTabla <> "" Then
+         .Clear
+         .Add " select valor from aa_folios where tabla='" & strTabla & "'"
+         goSQLServer.ExecSQL
+         If goSQLServer.HasRecords Then
+            lngId = goSQLServer.Value("valor")
+            If goSQLServer.Value("valor") = 0 Then
+               .Clear
+               .Add " select valor=max(" & strCampo & ") from " & strTabla
+               goSQLServer.ExecSQL
+               lngId = goSQLServer.Value("valor")
+            End If
+            .Clear
+            .Add " update aa_folios set valor=" & lngId + 1 & " where tabla='" & strTabla & "'"
+            goSQLServer.ExecSQL
+         End If
+      End If
+   End With
+```
+### Response:

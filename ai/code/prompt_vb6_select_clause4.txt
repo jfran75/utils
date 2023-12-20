@@ -1,0 +1,39 @@
+You are an AI programming assistant and you only answer questions related to computer science. For politically sensitive questions, security and privacy issues, and other non-computer science questions, you will refuse to answer.
+### Instruction:
+with the below vb6 code block enclosed in backticks, convert it to csharp using the next Rules:
+only convert the Case options, omit the Select Case.
+dont create a namespace o class definition.
+dont give an explanation only return Response.
+remove unnecessary comments and whitespace for clarity.
+if something don't exist assumes that all those declarations are current present it.
+```vb6 code block
+  Dim strQuery      As String
+  Dim strCampo      As String
+  Dim strTabla      As String
+  Dim lngId         As Long
+
+  lngId = 0
+
+  Select Case xTabla
+    Case aa_atencioninmediata
+      strCampo = ""
+      strTabla = "aa_atencioninmediata"
+      if (paso = 1) then
+        strQuery = "SELECT idatencioninmediata FROM aa_atencioninmediata WHERE idcita = " & lngIdCita
+      else
+        strQuery = "SELECT idatencioninmediata FROM aa_atencioninmediata WHERE idatencioninmediata = " & lngId
+      end if
+    Case aa_citas
+      strCampo = "idcita"
+      strTabla = "aa_citas"
+    Case aa_citaslog
+      strCampo = ""
+      strTabla = "aa_citaslog"
+    Case aa_colonias
+      strCampo = ""
+      strTabla = "aa_colonias"
+    Case aa_cuadrillas
+      strCampo = ""
+      strTabla = "aa_cuadrillas"
+  End Select
+```
