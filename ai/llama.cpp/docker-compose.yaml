@@ -1,0 +1,19 @@
+version: "3.7"
+
+services:
+  llama.cpp:
+    container_name: llama.cpp
+    image: llama.cpp
+    build:
+      context: ../
+      dockerfile: ./llama.cpp/Dockerfile
+    ports:
+      - 8080:8080
+      - 8081:8081
+    volumes:
+      - /Volumes/local-data/repos/utils/ai/llm_models:/models # rlapstudio
+
+# networks:
+#   sfyc:
+#     external:
+#       name: sfyc

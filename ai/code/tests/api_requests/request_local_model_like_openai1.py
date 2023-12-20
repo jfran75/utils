@@ -14,7 +14,8 @@ print(f"prompt: {prompt.format()}")
 # you must run "python ../../../llama.cpp/llamaapp.cpp/examples/server/api_like_OAI.py"
 # that server its http://localhost:8081
 # the openai_api_key is not used in this case because we are only using the openai framework
-llm = OpenAI(openai_api_base="http://localhost:8081",
+uri = "http://localhost:8081"
+llm = OpenAI(openai_api_base=uri,
             openai_api_key="YOUR_API_KEY",
             streaming=True,
             callback_manager=callback_manager,
