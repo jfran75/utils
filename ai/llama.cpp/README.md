@@ -28,8 +28,10 @@ conda env remove --name llama.cpp
 conda install python={python_version}
 
 ## install the requirements
+which python
 which python3
-python3 -m pip install -r requirements.txt
+which pip
+
 
 ```
 
