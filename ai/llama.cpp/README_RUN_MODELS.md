@@ -41,6 +41,7 @@ la $PROMPT_PATH
 conda activate llama.cpp && which python
 ./server -m $MODEL_PATH  --ctx_size 2048
 
+
 ./server -m $MODEL_PATH  --ctx_size 2048 --host rlaplnxml2 --port 8080 --threads 8
 
 --mlock
@@ -77,3 +78,22 @@ docker run --rm -it -v $(pwd)/llm_models:/models ghcr.io/ggerganov/llama.cpp:lig
   --n_predict -1 \
 docker ps -a
 ```
+
+./server -m /models/TheBloke/deepseek-coder-6.7B-instruct-GGUF/deepseek-coder-6.7b-instruct.Q8_0.gguf --ctx_size 2048 --host 0.0.0.0 --port 8080 --threads 8
+
+./server -m /models/TheBloke/deepseek-coder-6.7B-instruct-GGUF/deepseek-coder-6.7b-instruct.Q8_0.gguf --ctx_size 2048 --threads 8 --host 0.0.0.0 --port 8080
+
+curl --request POST --url http://localhost:4600/completion --header "Content-Type: application/json" --data '{"prompt": "Building a website can be done in 10 simple steps:","n_predict": 128}'
+
+curl --request POST --url http://localhost:8080/completion --header "Content-Type: application/json" --data '{"prompt": "Building a website can be done in 10 simple steps:","n_predict": 128}'
+
+curl --request POST --url http://rlaplnxml2:4600/completion --header "Content-Type: application/json" --data '{"prompt": "Building a website can be done in 10 simple steps:","n_predict": 128}'
+
+curl --request POST --url http://172.22.0.2:8080/completion --header "Content-Type: application/json" --data '{"prompt": "Building a website can be done in 10 simple steps:","n_predict": 128}'
+
+ping 172.22.0.2
+
+curl --request GET --url http://127.0.0.1:8080/docs
+curl --request GET --url http://localhost:4600/docs
+
+python3 -m llama_cpp.server --model /models/TheBloke/deepseek-coder-6.7B-instruct-GGUF/deepseek-coder-6.7b-instruct.Q8_0.gguf --host 0.0.0.0 --port 8080

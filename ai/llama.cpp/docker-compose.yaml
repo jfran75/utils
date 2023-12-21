@@ -8,12 +8,16 @@ services:
       context: ../
       dockerfile: ./llama.cpp/Dockerfile
     ports:
-      - 8080:8080
-      - 8081:8081
+      - 4600:8080
+      # - 8081:8081
+    networks:
+      - sfyc
+    # extra_hosts:
+    #   - "localhost:127.0.0.1"
     volumes:
-      - /Volumes/local-data/repos/utils/ai/llm_models:/models # rlapstudio
+      - /home/jchinchillas/proyectos/rlab/utils/ai/llm_models:/models # rlaplnxml2
 
-# networks:
-#   sfyc:
-#     external:
-#       name: sfyc
+networks:
+  sfyc:
+    name: sfyc
+    external: false
