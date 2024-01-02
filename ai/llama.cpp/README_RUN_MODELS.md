@@ -41,8 +41,7 @@ la $PROMPT_PATH
 conda activate llama.cpp && which python
 ./server -m $MODEL_PATH  --ctx_size 2048
 
-
-./server -m $MODEL_PATH  --ctx_size 2048 --host rlaplnxml2 --port 8080 --threads 8
+./server -m $MODEL_PATH  --ctx_size 2048 --host 0.0.0.0 --port 8080 --threads 8
 
 --mlock
 --batch-size 
@@ -89,11 +88,15 @@ curl --request POST --url http://localhost:8080/completion --header "Content-Typ
 
 curl --request POST --url http://rlaplnxml2:4600/completion --header "Content-Type: application/json" --data '{"prompt": "Building a website can be done in 10 simple steps:","n_predict": 128}'
 
-curl --request POST --url http://172.22.0.2:8080/completion --header "Content-Type: application/json" --data '{"prompt": "Building a website can be done in 10 simple steps:","n_predict": 128}'
+curl --request POST --url http://rlaplnxml2:8080/completion --header "Content-Type: application/json" --data '{"prompt": "Building a website can be done in 10 simple steps:","n_predict": 128}'
 
-ping 172.22.0.2
+curl --request POST --url http://rlaplnxml2:8080/completion --header "Content-Type: application/json" --data '{"prompt": "tell me something about csharp:","n_predict": 128}'
 
-curl --request GET --url http://127.0.0.1:8080/docs
-curl --request GET --url http://localhost:4600/docs
+curl --request POST --url http://rlaplnxml2:8080/completion --header "Content-Type: application/json" --data '{"prompt": "my name its jesus:","n_predict": 128}'
 
+curl --request POST --url http://rlaplnxml2:8080/completion --header "Content-Type: application/json" --data '{"prompt": "tell me my name:","n_predict": 128}'
+
+# Investigate the following server:
+```
 python3 -m llama_cpp.server --model /models/TheBloke/deepseek-coder-6.7B-instruct-GGUF/deepseek-coder-6.7b-instruct.Q8_0.gguf --host 0.0.0.0 --port 8080
+```

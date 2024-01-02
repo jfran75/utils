@@ -17,6 +17,8 @@ rclone sync ~/google_drive/rapiduslabs rapiduslabs:
 # syncronize the files bidirectional
 rclone bisync rapiduslabs: ~/google_drive/rapiduslabs --resync --progress --log-file ~/.config/rclone/rclone.log
 
+rclone bisync ~/google_drive/rapiduslabs rapiduslabs: --resync --progress --log-file ~/.config/rclone/rclone.log
+
 # check the files
 la ~/google_drive/rapiduslabs
 du -sh ~/google_drive/rapiduslabs # check the size of the folder
