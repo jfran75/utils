@@ -39,4 +39,8 @@ Map("o", "-", "v-")
 -- Map("n", "yP", "yyP")
 -- Map("n", "&", ":%s`\\V")
 
--- print("remaps.lua loaded")
+print("remaps.lua loaded")
+
+Map("n", "k", "gk") -- Join current line with the next line with no space in between, *also* discarding any leading whitespace of the next line. Because gJ would include indentation. Stupidly.
+Map("n", "j", "gj") -- Join current line with the next line with no space in between, *also* discarding any leading whitespace of the next line. Because gJ would include indentation. Stupidly.
+

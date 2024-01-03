@@ -34,17 +34,17 @@ Map("v", "gc", Comment_vis)
 -- Map({ "n", "v" }, "zt", Vscode_ctrl_d)
 -- Map({ "n", "v" }, "zb", Vscode_ctrl_u)
 
- -- local move_to_bottom_screen__center_screen = 'Lzz'
+-- local move_to_bottom_screen__center_screen = 'Lzz'
 -- Map("", "L", move_to_bottom_screen__center_screen)
 
 -- local move_to_top_screen__center_screen = 'Hzz'
 -- Map("", "H", move_to_top_screen__center_screen)
 
 -- leap for motions
-Map({"n", "x", "o"}, "q", "<Plug>(leap-forward-to)")
-Map({"n", "x", "o"}, "Q", "<Plug>(leap-backward-to)")
-Map({"x", "o"}, "x", "<Plug>(leap-forward-till)")
-Map({"x", "o"}, "X", "<Plug>(leap-backward-till)")
+Map({ "n", "x", "o" }, "q", "<Plug>(leap-forward-to)")
+Map({ "n", "x", "o" }, "Q", "<Plug>(leap-backward-to)")
+Map({ "x", "o" }, "x", "<Plug>(leap-forward-till)")
+Map({ "x", "o" }, "X", "<Plug>(leap-backward-till)")
 
 -- easyalign
 Map("", "ga", "<Plug>(EasyAlign)")
