@@ -26,7 +26,8 @@ killall Finder
 
 ## install kitty
 ## install neovim
- - brew install neovim
+ - brew install 
+ - scp -r ~/.config/nvim jchinchillas@rlaplapm1:~/.config
 
 ## install oh-my-zsh
 
@@ -80,6 +81,44 @@ sudo cp kubectl-vsphere /usr/local/bin
 ## registar ssh key bitbucket
 
 ## install tmux
-## install postman
-## install vscode
+  - brew install tmux
 
+## install nvm
+  - brew install nvm
+  
+## install miniconda
+  - brew install --cask miniconda
+
+## install tree
+  - brew install tree
+
+## install ripgrep
+  - brew install ripgrep
+
+## install zoxide 
+  - brew install zoxide
+
+## install lsd
+  - brew install lsd
+
+## install bat
+  - brew install bat
+
+## install fzf
+```
+git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+~/.fzf/install
+```
+
+## install postman
+  - brew install --cask postman
+
+## install vscode
+  - brew install --cask visual-studio-code
+  - copy the settings
+
+## install rider with jetbrains-toolbox
+  - brew install --cask jetbrains-toolbox
+
+## install docker
+  - brew install --cask docker --force

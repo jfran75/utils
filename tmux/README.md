@@ -4,8 +4,10 @@
 
 ## tmux.conf
 ```
-nvim ~/.tmux.conf
-tmux source ~/.tmux.conf
+mkdir -p ~/.config/tmux
+nvim ~/.config/tmux/tmux.conf
+tmux source ~/.config/tmux/tmux.conf
+scp ~/.config/tmux/tmux.conf jchinchillas@rlaplapm1:~/.config/tmux/tmux.conf
 ```
 
 ## tmux default key bindings
@@ -64,7 +66,7 @@ tmux kill-session -t <session name> # kill session
 
 ## tmux plugins
 ```
-git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+git clone https://github.com/tmux-plugins/tpm ~/.config/tmux/plugins/tpm
 ctrl+s I # install plugins
 
 ```
