@@ -4,8 +4,10 @@
   - https://github.com/Hammerspoon/hammerspoon
 ```
 scp -r ./.hammerspoon jchinchillas@rlapmini.local:~/
-brew install hammerspoon --cask
+brew install --cask hammerspoon
 ```
 
 la ~/.hammerspoon
 nvim ~/.hammerspoon/init.lua
+
+scp -r ~/.hammerspoon jchinchillas@rlaplapm1:~/ 

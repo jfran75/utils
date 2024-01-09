@@ -122,3 +122,10 @@ git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 
 ## install docker
   - brew install --cask docker --force
+
+## install yabai
+
+## install hamerspoon
+
+## install neofetch
+  - brew install neofetch
