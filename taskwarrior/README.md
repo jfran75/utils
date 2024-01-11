@@ -34,3 +34,8 @@ task <task number> modify due:eoy
 task add Read Taskwarrior documents later
 task add priority:H Pay bills
 ```
+
+- frontend
+  - configuracion obtenida de los configmaps(revisar omar)
+  - migracion a la version 16 de angular.
+  - 

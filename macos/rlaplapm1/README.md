@@ -1,3 +1,10 @@
+# Info
+- MacBook Pro 16-inch, 2021
+- modelo: A2485
+- ram: 16 GB LPDDR5 samsung
+- processor: apple m1 pro
+- disk: 512 GB SSD
+
 #### copy  the settings and shortcuts from rlaplapm1
 
 
