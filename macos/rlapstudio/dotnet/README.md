@@ -36,3 +36,20 @@ export DOTNET_ROOT=$HOME/dotnet
 export PATH=$PATH:$HOME/dotnet
 
 ```
+
+
+# install dotnet sdk linux
+```
+wget https://download.visualstudio.microsoft.com/download/pr/01292c7c-a1ec-4957-90fc-3f6a2a1e5edc/025e84c4d9bd4aeb003d4f07b42e9159/dotnet-sdk-6.0.418-linux-x64.tar.gz
+
+mkdir -p $HOME/dotnet && tar zxf dotnet-sdk-6.0.418-linux-x64.tar.gz -C $HOME/dotnet
+export DOTNET_ROOT=$HOME/dotnet
+export PATH=$PATH:$HOME/dotnet
+
+
+wget https://download.visualstudio.microsoft.com/download/pr/5202b091-2406-445c-b40a-68a5b97c882b/b509f2a7a0eb61aea145b990b40b6d5b/dotnet-sdk-7.0.405-linux-x64.tar.gz
+mkdir -p $HOME/dotnet && tar zxf dotnet-sdk-7.0.405-linux-x64.tar.gz -C $HOME/dotnet
+
+wget https://download.visualstudio.microsoft.com/download/pr/9454f7dc-b98e-4a64-a96d-4eb08c7b6e66/da76f9c6bc4276332b587b771243ae34/dotnet-sdk-8.0.101-linux-x64.tar.gz
+mkdir -p $HOME/dotnet && tar zxf dotnet-sdk-8.0.101-linux-x64.tar.gz -C $HOME/dotnet
+```

@@ -1,6 +1,15 @@
-# script tmux/k9s-qa.sh
-# Purpose: tmux script to run k9s QA
+# script tmux/k9s-dev.sh
+# Purpose: tmux script to run k9s development
 #!/bin/bash
+
+kubectl vsphere login \
+   --server tkg-supervisor.evolution.corp \
+   --insecure-skip-tls-verify \
+   --vsphere-username jenkins-adm@evolution.corp \
+   --tanzu-kubernetes-cluster-name dev-cluster-1-23 \
+   --tanzu-kubernetes-cluster-namespace development
+
+wait
 
 # Asegúrate de definir la variable prefix
 prefix="dev"
@@ -15,7 +24,7 @@ if ! tmux has-session -t ${tmux_session} 2>/dev/null; then
   tmux new-session -d -s ${tmux_session}
 fi
 
-declare -a commands=("events" "nodes" "ns" "gw" "pods" "deploy" "virtualservices" "dr" "cm" "secrets" "pvc" "pv" "roles" "rolebindings" "Podsecuritypolicies")
+declare -a commands=("events" "nodes" "ns" "gw" "pods" "deploy" "virtualservices" "dr" "svc" "cm" "secrets" "pvc" "pv" "roles" "rolebindings" "Podsecuritypolicies")
 
 for command in "${commands[@]}"; do
   window_title="${prefix}-${command}"
@@ -23,4 +32,4 @@ for command in "${commands[@]}"; do
   tmux send -t ${tmux_session}:${window_title} k9s SPACE --kubeconfig SPACE ${kube_config_path} SPACE --context SPACE ${context} SPACE --namespace SPACE ${namespace} SPACE --command SPACE ${command} ENTER
 done
 
-tmux attach -t k9s-dev
+tmux attach -t ${tmux_session}

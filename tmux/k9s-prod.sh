@@ -1,6 +1,15 @@
-# script tmux/k9s-qa.sh
-# Purpose: tmux script to run k9s QA
+# script tmux/k9s-prod.sh
+# Purpose: tmux script to run k9s production
 #!/bin/bash
+
+kubectl vsphere login \
+   --server tkg-supervisor.evolution.corp \
+   --insecure-skip-tls-verify \
+   --vsphere-username jenkins-adm@evolution.corp \
+   --tanzu-kubernetes-cluster-name prod-sfyc \
+   --tanzu-kubernetes-cluster-namespace production
+
+wait
 
 # Asegúrate de definir la variable prefix
 prefix="prod"
@@ -23,4 +32,4 @@ for command in "${commands[@]}"; do
   tmux send -t ${tmux_session}:${title} k9s SPACE --kubeconfig SPACE ${kube_config_path} SPACE --context SPACE ${context} SPACE --namespace SPACE ${namespace} SPACE --command SPACE ${command} ENTER
 done
 
-tmux attach -t k9s-prod
+tmux attach -t ${tmux_session}

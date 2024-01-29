@@ -2,6 +2,15 @@
 # Purpose: tmux script to run k9s QA
 #!/bin/bash
 
+kubectl vsphere login \
+   --server tkg-supervisor.evolution.corp \
+   --insecure-skip-tls-verify \
+   --vsphere-username jenkins-adm@evolution.corp \
+   --tanzu-kubernetes-cluster-name qa-cluster-1-23 \
+   --tanzu-kubernetes-cluster-namespace development
+
+wait
+
 # Asegúrate de definir la variable prefix
 prefix="qa"
 tmux_session="k9s-qa"
@@ -23,5 +32,5 @@ for command in "${commands[@]}"; do
   tmux send -t ${tmux_session}:${title} k9s SPACE --kubeconfig SPACE ${kube_config_path} SPACE --context SPACE ${context} SPACE --namespace SPACE ${namespace} SPACE --command SPACE ${command} ENTER
 done
 
-tmux attach -t k9s-qa
+tmux attach -t ${tmux_session}
 
