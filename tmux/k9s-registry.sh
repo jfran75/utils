@@ -3,7 +3,7 @@
 #!/bin/bash
 
 # JSON array of title and command values
-tmux_session="k9s-dev-svc"
+tmux_session="k9s-registry"
 prefix="registry"
 kube_config_path="/Users/jchinchillas/.kube/prod-legacy"
 context="prod-legacy"
