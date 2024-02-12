@@ -12,7 +12,8 @@ json='[
   { "title": "kitty", "path": "~/.config/kitty/kitty.conf" },  
   { "title": "yabai", "path": "~/.config/yabai/yabairc" },
   { "title": "p10k", "path": "~/.p10k.zsh" },
-  { "title": "rclone", "path": "~/.config/rclone/rclone.conf" }
+  { "title": "rclone", "path": "~/.config/rclone/rclone.conf" },
+  { "title": "git", "path": "~/.gitconfig" }
 ]'
 
 # for testing
