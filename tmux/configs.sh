@@ -13,7 +13,8 @@ json='[
   { "title": "yabai", "path": "~/.config/yabai/yabairc" },
   { "title": "p10k", "path": "~/.p10k.zsh" },
   { "title": "rclone", "path": "~/.config/rclone/rclone.conf" },
-  { "title": "git", "path": "~/.gitconfig" }
+  { "title": "git", "path": "~/.gitconfig" },
+  { "title": "hosts", "path": "/etc/hosts" }
 ]'
 
 # for testing
