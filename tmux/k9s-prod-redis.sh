@@ -1,10 +1,10 @@
-# script tmux/k9s-prod.sh
-# Purpose: tmux script to run k9s
+# script tmux/k9s-prod-redis.sh
+# Purpose: tmux script to run k9s production redis
 #!/bin/bash
 
 # JSON array of title and command values
-tmux_session="k9s-prod"
-prefix="dev-prod"
+tmux_session="k9s-prod-redis"
+prefix="prod-redis"
 kube_config_path="/Users/jchinchillas/.kube/config"
 context="production-sfyc"
 
@@ -12,21 +12,13 @@ json='[
   { "title": "events", "command": "events", "namespace": "" },
   { "title": "nodes", "command": "nodes", "namespace": "" },
   { "title": "ns","command": "namespaces", "namespace": "" },
-  { "title": "gw", "command": "gateway", "namespace": "sfyc" },
-  { "title": "pods", "command": "pods", "namespace": "sfyc" },  
-  { "title": "deploys", "command": "deploy", "namespace": "sfyc" },
-  { "title": "vs", "command": "virtualservices", "namespace": "sfyc" },
-  { "title": "hpa", "command": "hpa", "namespace": "sfyc" },
-  { "title": "dr", "command": "destinationrules", "namespace": "sfyc" },
-  { "title": "svc", "command": "services", "namespace": "sfyc" },
-  { "title": "cm", "command": "configmaps", "namespace": "sfyc" },
-  { "title": "secrets", "command": "secrets", "namespace": "sfyc" },
-  { "title": "pvc", "command": "pvc", "namespace": "sfyc" },
-  { "title": "pv", "command": "pv", "namespace": "sfyc" },
-  { "title": "roles", "command": "roles", "namespace": "sfyc" },
-  { "title": "PeerAuthentication", "command": "PeerAuthentications", "namespace": "sfyc" },
-  { "title": "RoleBindings", "command": "rolebindings", "namespace": "sfyc" },
-  { "title": "PodSecurityPolicies", "command": "PodSecurityPolicies", "namespace": "sfyc" }
+  { "title": "pods", "command": "pods", "namespace": "redis" },  
+  { "title": "statefulsets", "command": "statefulsets", "namespace": "redis" },
+  { "title": "svc", "command": "services", "namespace": "redis" },
+  { "title": "cm", "command": "configmaps", "namespace": "redis" },
+  { "title": "secrets", "command": "secrets", "namespace": "redis" },
+  { "title": "pvc", "command": "pvc", "namespace": "redis" },
+  { "title": "pv", "command": "pv", "namespace": "redis" }
 ]'
 
 tmux kill-session -t ${tmux_session}
