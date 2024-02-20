@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Kindle Oasis (generación 10) 2019
 - modelo: S8IN4O
 - pantalla de 7 pulgadas y botones físicos para pasar páginas
@@ -14,10 +13,3 @@ https://www.amazon.com.mx/HBS-Funda-Kindle-Oasis-Generaci%C3%B3n/dp/B08RW1BCXZ/r
 
 ## Protector de Pantalla para Kindle Oasis 2019 10th/2017 9th
 - https://www.amazon.com.mx/Kepuch-Amazon-Kindle-Protector-Pantalla/dp/B076ZPG6S5/ref=pd_bxgy_d_sccl_2/139-0982074-1051714?pd_rd_w=U6umn&content-id=amzn1.sym.5bea1d89-41d2-40ec-a934-56ab6f2c69fa&pf_rd_p=5bea1d89-41d2-40ec-a934-56ab6f2c69fa&pf_rd_r=599TR6DQZ1F0JSAW1488&pd_rd_wg=fwhov&pd_rd_r=e0393cd6-37d1-43f7-9989-f92e684d7971&pd_rd_i=B076ZPG6S5&th=1
-=======
-# hardware
-
-## microphone
-- [hyperx solocast](./docs/HX-SoloCast-User-Manual.pdf)
-  
->>>>>>> 85587a94737ff9f99d40d5388bae7e91be35af4a
