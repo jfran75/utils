@@ -7,6 +7,7 @@ tmux_session="k9s-prod-redis"
 prefix="prod-redis"
 kube_config_path="/Users/jchinchillas/.kube/config"
 context="production-sfyc"
+cluster_namespace="production-sfyc"
 
 json='[
   { "title": "events", "command": "events", "namespace": "" },
@@ -29,7 +30,7 @@ kubectl vsphere login \
   --insecure-skip-tls-verify \
   --vsphere-username jenkins-adm@evolution.corp \
   --tanzu-kubernetes-cluster-name ${context} \
-  --tanzu-kubernetes-cluster-namespace ${context}
+  --tanzu-kubernetes-cluster-namespace ${cluster_namespace}
 wait
 
 # Check if the tmux session exists

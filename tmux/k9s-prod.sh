@@ -4,9 +4,10 @@
 
 # JSON array of title and command values
 tmux_session="k9s-prod"
-prefix="dev-prod"
+prefix="prod"
 kube_config_path="/Users/jchinchillas/.kube/config"
 context="production-sfyc"
+cluster_namespace="production-sfyc"
 
 json='[
   { "title": "events", "command": "events", "namespace": "" },
@@ -23,10 +24,13 @@ json='[
   { "title": "secrets", "command": "secrets", "namespace": "sfyc" },
   { "title": "pvc", "command": "pvc", "namespace": "sfyc" },
   { "title": "pv", "command": "pv", "namespace": "sfyc" },
-  { "title": "roles", "command": "roles", "namespace": "sfyc" },
   { "title": "PeerAuthentication", "command": "PeerAuthentications", "namespace": "sfyc" },
+  { "title": "PodSecurityPolicies", "command": "PodSecurityPolicies", "namespace": "sfyc" },
+  { "title": "roles", "command": "roles", "namespace": "sfyc" },
   { "title": "RoleBindings", "command": "rolebindings", "namespace": "sfyc" },
-  { "title": "PodSecurityPolicies", "command": "PodSecurityPolicies", "namespace": "sfyc" }
+  { "title": "ClusterRoles", "command": "ClusterRoles", "namespace": "" },
+  { "title": "ClusterRolBindings", "command": "clusterrolebinding", "namespace": "" },
+  { "title": "VirtualServers", "command": "VirtualServers", "namespace": "" }
 ]'
 
 tmux kill-session -t ${tmux_session}
@@ -37,7 +41,7 @@ kubectl vsphere login \
   --insecure-skip-tls-verify \
   --vsphere-username jenkins-adm@evolution.corp \
   --tanzu-kubernetes-cluster-name ${context} \
-  --tanzu-kubernetes-cluster-namespace ${context}
+  --tanzu-kubernetes-cluster-namespace ${cluster_namespace}
 wait
 
 # Check if the tmux session exists
