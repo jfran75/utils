@@ -58,10 +58,15 @@ ping Anyconnect.IT.Megacable.com.mx
 https://10.10.97.129
 
 # download the plugin
+mkdir vsphere-plugin && cd vsphere-plugin
 curl -o vsphere-plugin-linux-amd64.zip -LOk https://10.10.97.129/wcp/plugin/linux-amd64/vsphere-plugin.zip
 curl -o vsphere-plugin-macos.zip -LOk https://10.10.97.129/wcp/plugin/darwin-amd64/vsphere-plugin.zip
 curl -o vsphere-plugin-windows.zip -LOk https://10.10.97.129/wcp/plugin/windows-amd64/vsphere-plugin.zip
 
-unzip vsphere-plugin.zip
-mv -v bin/* /usr/local/bin/
+unzip vsphere-plugin-linux-amd64.zip
+ls -lart /usr/local/bin/
+sudo mv -v bin/* /usr/local/bin/
+la /usr/local/bin/
+which kubectl
+which kubectl-vsphere
 ```

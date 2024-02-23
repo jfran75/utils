@@ -4,7 +4,7 @@
 # JSON array of title and command values
 tmux_session="k9s-prod-svc-jenkins"
 prefix="prod-svc-jenkins"
-kube_config_path="/Users/jchinchillas/.kube/config"
+kube_config_path="~/.kube/config"
 context="prod-services"
 
 json='[

@@ -18,4 +18,9 @@ scp /Downloads/vsphere-plugin.zip jchinchillas@rlaplnxml1:~/paso
 unzip vsphere-plugin.zip
 kubectl plugin list
 
+echo $SC_IP
+curl -LOk https://${SC_IP}/wcp/plugin/linux-amd64/vsphere-plugin.zip
+unzip vsphere-plugin.zip
+mv -v bin/* /usr/local/bin/
+
 ```

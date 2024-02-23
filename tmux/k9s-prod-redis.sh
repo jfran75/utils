@@ -5,7 +5,7 @@
 # JSON array of title and command values
 tmux_session="k9s-prod-redis"
 prefix="prod-redis"
-kube_config_path="/Users/jchinchillas/.kube/config"
+kube_config_path="~/.kube/config"
 context="production-sfyc"
 cluster_namespace="production-sfyc"
 
