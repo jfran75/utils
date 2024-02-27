@@ -1,8 +1,8 @@
 $TTL 2d
 
- $ORIGIN demo.shinshinet.mx.
+ $ORIGIN shinshinet.mx.
 
-@       IN    SOA     ns.demo.shinshinet.mx. info.shinshinet.mx. (
+@       IN    SOA     ns.shinshinet.mx. root.shinshinet.mx. (
                       2024022700  ;serial
                       12h         ; refresh
                       15m         ; retry
@@ -10,7 +10,7 @@ $TTL 2d
                       2h          ; minimum
                       )
 
-        IN    NS      ns.demo.shinshinet.mx.
+        IN    NS      ns.shinshinet.mx.
 
 ns      IN    A       192.168.100.23
 

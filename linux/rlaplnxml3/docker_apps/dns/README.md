@@ -27,7 +27,10 @@ rlaplnxml2        IN    A   192.168.100.4
 rlaplnxml3        IN    A   192.168.100.5 
 rlaplapm1         IN    A   192.168.100.92
 
-nslookup youtube.com 192.168.100.5
+nslookup youtube.com
+nslookup youtube.com 192.168.100.23
+
+
 nslookup rlaplnxml2 192.168.100.5
 nslookup rlaplnxml2 192.168.100.5
 
