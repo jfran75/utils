@@ -2,7 +2,8 @@
 services:
   bind9:
     container_name: bind9
-    image: ubuntu/bind9:latest
+    image: ubuntu/bind9:9.18-23.10_edge
+    # image: ubuntu/bind9:latest
     environment:
       - BIND9_USER=root
       - TZ=America/Mexico_City
