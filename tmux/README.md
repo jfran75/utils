@@ -106,3 +106,54 @@ tmux send -t k9s-qa:nodes k9s SPACE --kubeconfig SPACE /Users/jchinchillas/.kube
 tmux send -t k9s-qa:nodes k9s SPACE --kubeconfig SPACE /Users/jchinchillas/.kube/config SPACE --context SPACE qa-cluster-1-23 SPACE --command SPACE nodes ENTER
 
 ```
+
+## tmux color
+```
+infocmp tmux-256color
+echo $TERM
+
+export TERM=tmux
+export TERM=tmux-256color
+export TERM=tmux-direct
+export TERM=xterm-256color
+
+
+axual
+black_and_wtf
+dracula
+gruvbox-dark
+gruvbox-light
+in_the_navy
+kiss
+monokai
+narsingh
+nightfox
+nord
+one_dark
+red
+rose_pine
+snazzy
+solarized-16
+solarized_dark
+solarized_light
+stock
+transparent
+
+
+infocmp -x tmux-256color > ~/paso/foo
+printf '\tTc,\n' >> ~/paso/foo
+tic -x ~/paso/foo
+
+nvim ~/paso/foo
+
+infocmp -x screen-256color
+infocmp -x xterm-256color
+
+infocmp -x xterm-kitty
+
+Terminal colors look wrong when using tmux with warp
+k9s colors look wrong when using tmux
+
+curl -L https://github.com/derailed/k9s/blob/master/skins/solarized_light.yml --output ~/.config/k9s/skin.yml
+
+```
