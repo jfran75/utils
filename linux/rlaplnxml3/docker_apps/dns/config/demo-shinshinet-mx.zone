@@ -12,7 +12,7 @@ $TTL 2d
 
         IN    NS      ns.demo.shinshinet.mx.
 
-ns      IN    A       192.168.100.5
+ns      IN    A       192.168.100.23
 
 ; -- add dns records below this line --
 
@@ -20,7 +20,8 @@ rlapmini          IN    A   192.168.100.80
 rlapstudio        IN    A   192.168.100.68
 rlaplenovo        IN    A   192.168.100.64
 rlaplnxml1        IN    A   192.168.100.85
-rlaplnxml2        IN    A   192.168.100.4 
+rlaplnxml2        IN    A   192.168.100.4
+rlaplnxml3        IN    A   192.168.100.23
 rlaplapm1         IN    A   192.168.100.92
 
 ;
