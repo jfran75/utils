@@ -51,6 +51,7 @@ declare -a commands=("events" "nodes" "ns" "gw" "pods" "deploy" "virtualservices
 for command in "${commands[@]}"; do
   title="${prefix}-${command}"
   tmux new-window -n ${title} -t ${tmux_session} -d
+  tmux send -t ${tmux_session}:${title} export TERM=xterm-256color ENTER
   tmux send -t ${tmux_session}:${title} k9s SPACE --kubeconfig SPACE ${kube_config_path} SPACE --context SPACE ${context} SPACE --namespace SPACE ${namespace} SPACE --command SPACE ${command} ENTER
 done
 

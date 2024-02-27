@@ -29,6 +29,7 @@ fi
 # Loop through the JSON array
 echo "$json" | jq -r '.[] | .title, .path' | while read -r title && read -r path; do
   tmux new-window -n ${title} -t ${tmux_session} -d
+  tmux send -t ${tmux_session}:${title} export TERM=xterm-256color ENTER
   tmux send -t ${tmux_session}:${title} nvim SPACE ${path} ENTER
 done
 

@@ -54,6 +54,8 @@ fi
 echo "$json" | jq -r '.[] | .title, .command, .namespace' | while read -r title && read -r command && read -r namespace; do
   tmux new-window -n ${title} -t ${tmux_session} -d
 
+  tmux send -t ${tmux_session}:${title} export TERM=xterm-256color ENTER
+  
   if [[ -z "${namespace}" ]]; then
     tmux send -t ${tmux_session}:${title} k9s SPACE --kubeconfig SPACE ${kube_config_path} SPACE --context SPACE ${context} SPACE --command SPACE ${command} ENTER
   else
