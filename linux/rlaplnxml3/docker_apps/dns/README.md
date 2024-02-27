@@ -7,6 +7,7 @@ sudo systemctl restart systemd-resolved
 docker compose up
 
 nslookup youtube.com 192.168.100.5
+sudo vim /etc/resolv.conf
 
 http://192.168.100.1/index.asp
 
