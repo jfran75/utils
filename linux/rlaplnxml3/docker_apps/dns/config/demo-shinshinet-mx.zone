@@ -1,6 +1,6 @@
 $TTL 2d
 
- $ORIGIN shinshinet.mx.
+$ORIGIN shinshinet.mx.
 
 @       IN    SOA     ns.shinshinet.mx. root.shinshinet.mx. (
                       2024022700  ;serial
