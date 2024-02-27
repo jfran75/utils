@@ -27,6 +27,13 @@ rlaplnxml2        IN    A   192.168.100.4
 rlaplnxml3        IN    A   192.168.100.5 
 rlaplapm1         IN    A   192.168.100.92
 
-ping rlaplnxml2
+nslookup youtube.com 192.168.100.5
+nslookup rlaplnxml2 192.168.100.5
+nslookup rlaplnxml2 192.168.100.5
 
+ping rlaplnxml2
+ping rlaplnxml2.demo.shinshinet.mx
+ping demo.shinshinet.mx.rlaplnxml2
+
+bind9 failed: no owner
 ```

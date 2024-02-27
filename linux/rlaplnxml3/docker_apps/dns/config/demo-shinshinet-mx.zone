@@ -14,7 +14,7 @@ $TTL 2d
 
 ns      IN    A       192.168.100.5
 
-; -- add dns records belor this line --
+; -- add dns records below this line --
 
 rlapmini          IN    A   192.168.100.80
 rlapstudio        IN    A   192.168.100.68
