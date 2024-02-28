@@ -12,7 +12,7 @@ $ORIGIN shinshinet.mx.
 
         IN    NS      ns.shinshinet.mx.
 
-ns      IN    A       192.168.100.23
+ns      IN    A       192.168.100.5
 
 ; -- add dns records below this line --
 
