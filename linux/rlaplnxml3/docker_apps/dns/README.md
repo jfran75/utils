@@ -16,7 +16,7 @@ rlapmini.local          IN    A   192.168.100.80
 rlapstudio.local        IN    A   192.168.100.68
 rlaplenovo.local        IN    A   192.168.100.64
 rlaplnxml1              IN    A   192.168.100.85
-rlaplnxml2              IN    A   192.168.100.4 
+rlaplnxml2              IN    A   192.168.100.4
 rlaplnxml3              IN    A   192.168.100.5 
 rlaplapm1.local         IN    A   192.168.100.92
 
