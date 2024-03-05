@@ -1,36 +1,25 @@
-# script tmux/k9s-qa.sh
-# Purpose: tmux script to run k9s
+# script tmux/k9s-dev-redis.sh
+# Purpose: tmux script to run k9s production redis
 #!/bin/bash
 
 # JSON array of title and command values
-tmux_session="k9s-qa"
-prefix="qa"
+tmux_session="k9s-dev-redis"
+prefix="dev-redis"
 kube_config_path="~/.kube/config"
-context="qa-cluster"
+context="dev-cluster-1-23"
 cluster_namespace="development"
 
 json='[
   { "title": "events", "command": "events", "namespace": "" },
   { "title": "nodes", "command": "nodes", "namespace": "" },
   { "title": "ns","command": "namespaces", "namespace": "" },
-  { "title": "gw", "command": "gateway", "namespace": "sfyc" },
-  { "title": "pods", "command": "pods", "namespace": "sfyc" },  
-  { "title": "deploys", "command": "deploy", "namespace": "sfyc" },
-  { "title": "vs", "command": "virtualservices", "namespace": "sfyc" },
-  { "title": "hpa", "command": "hpa", "namespace": "sfyc" },
-  { "title": "dr", "command": "destinationrules", "namespace": "sfyc" },
-  { "title": "svc", "command": "services", "namespace": "sfyc" },
-  { "title": "cm", "command": "configmaps", "namespace": "sfyc" },
-  { "title": "secrets", "command": "secrets", "namespace": "sfyc" },
-  { "title": "pvc", "command": "pvc", "namespace": "sfyc" },
-  { "title": "pv", "command": "pv", "namespace": "sfyc" },
-  { "title": "PeerAuthentication", "command": "PeerAuthentications", "namespace": "sfyc" },
-  { "title": "PodSecurityPolicies", "command": "PodSecurityPolicies", "namespace": "sfyc" },
-  { "title": "roles", "command": "roles", "namespace": "sfyc" },
-  { "title": "RoleBindings", "command": "rolebindings", "namespace": "sfyc" },
-  { "title": "ClusterRoles", "command": "ClusterRoles", "namespace": "" },
-  { "title": "ClusterRolBindings", "command": "clusterrolebinding", "namespace": "" },
-  { "title": "VirtualServers", "command": "VirtualServers", "namespace": "" }
+  { "title": "pods", "command": "pods", "namespace": "redis" },  
+  { "title": "statefulsets", "command": "statefulsets", "namespace": "redis" },
+  { "title": "svc", "command": "services", "namespace": "redis" },
+  { "title": "cm", "command": "configmaps", "namespace": "redis" },
+  { "title": "secrets", "command": "secrets", "namespace": "redis" },
+  { "title": "pvc", "command": "pvc", "namespace": "redis" },
+  { "title": "pv", "command": "pv", "namespace": "redis" }
 ]'
 
 tmux kill-session -t ${tmux_session}
@@ -56,7 +45,7 @@ echo "$json" | jq -r '.[] | .title, .command, .namespace' | while read -r title 
 
   tmux send -t ${tmux_session}:${title} export TERM=xterm-256color ENTER
   
-  if [[ -z "${namespace}" ]]; then    
+  if [[ -z "${namespace}" ]]; then
     tmux send -t ${tmux_session}:${title} k9s SPACE --kubeconfig SPACE ${kube_config_path} SPACE --context SPACE ${context} SPACE --command SPACE ${command} ENTER
   else
     tmux send -t ${tmux_session}:${title} k9s SPACE --kubeconfig SPACE ${kube_config_path} SPACE --context SPACE ${context} SPACE --namespace SPACE ${namespace} SPACE --command SPACE ${command} ENTER
