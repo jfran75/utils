@@ -23,7 +23,6 @@ ping jenkins.dev-cluster.sfycnextgen.com.mx
 https://jenkins.dev-cluster.sfycnextgen.com.mx/
 ```
 
-
 ## setting network
 ```
 la /etc/systemd/
@@ -49,7 +48,6 @@ set
   UseDNS=false
 
 sudo systemctl restart systemd-networkd
-systemctl restart systemd-resolved
 
 ## test
 ping rlaplnxml2.home
@@ -82,22 +80,25 @@ ls -lart /data/profiles
 
 ```
 
-
-curl -k https://rlaplnxml2.home/api/__healthcheck
+# navigate by ip
+curl -k https://192.168.100.4/api/__healthcheck
 
 
 # restart all services on a server
+sudo /opt/kasm/bin/stop
+sudo /opt/kasm/bin/start
 cd /opt/kasm/bin
 ls -lart
 sudo ./stop
 sudo ./start
 
+docker ps -a
 
-kasm Error after container creation Traceback (most recent call last):
-  File "provision.py", line 1939, in provision
-  File "provision.py", line 2136, in generate_nginx_config
-Exception: Nginx failed to reload after generating config for container (1af2f50c167aaa941b02a051281137fde6ddfec4bec4b276c55dc7f303f3c4d3)
-Traceback (most recent call last):
-  File "provision.py", line 1939, in provision
-  File "provision.py", line 2136, in generate_nginx_config
-Exception: Nginx failed to reload after generating config for container (1af2f50c167aaa941b02a051281137fde6ddfec4bec4b276c55dc7f303f3c4d3)
+dig http://www.google
+tracepath -n -b www.google
+
+# shut down kasm
+sudo /opt/kasm/bin/stop
+
+# cant resolve rlaplnxml2.home
+sudo docker exec -it kasm_proxy sh
