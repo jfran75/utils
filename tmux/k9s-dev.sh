@@ -17,7 +17,6 @@ json='[
   { "title": "pods", "command": "pods", "namespace": "sfyc" },  
   { "title": "deploys", "command": "deploy", "namespace": "sfyc" },
   { "title": "vs", "command": "virtualservices", "namespace": "sfyc" },
-  { "title": "hpa", "command": "hpa", "namespace": "sfyc" },
   { "title": "dr", "command": "destinationrules", "namespace": "sfyc" },
   { "title": "svc", "command": "services", "namespace": "sfyc" },
   { "title": "cm", "command": "configmaps", "namespace": "sfyc" },
