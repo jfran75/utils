@@ -10,21 +10,42 @@ ls -la /usr/local/share/dotnet/sdk/7.0.302
 # link
 /usr/local/bin/dotnet ⇒ /usr/local/share/dotnet/dotnet
 
+tree $HOME/dotnet
 ls -la $HOME/dotnet
 ls -la $HOME/dotnet/sdk
 
 cd /Volumes/local-data/paso/dotnet
 dotnet --version
 
-wget https://download.visualstudio.microsoft.com/download/pr/4aeecc7c-7ffa-418f-9362-cf5eb3ed0396/055d5e6064a9fdecd7d906f5f262373d/dotnet-sdk-5.0.408-osx-x64.tar.gz
-mkdir -p $HOME/dotnet && tar zxf dotnet-sdk-6.0.418-osx-x64.tar.gz -C $HOME/dotnet
+```
 
+# install dotnet sdk linux macos x64
+```
+wget https://download.visualstudio.microsoft.com/download/pr/4aeecc7c-7ffa-418f-9362-cf5eb3ed0396/055d5e6064a9fdecd7d906f5f262373d/dotnet-sdk-5.0.408-osx-x64.tar.gz
+mkdir -p $HOME/dotnet && tar zxf dotnet-sdk-5.0.408-osx-x64.tar.gz -C $HOME/dotnet
 
 wget https://download.visualstudio.microsoft.com/download/pr/0cce8cdf-fcdf-453e-9346-96abbe76ba6e/79047571e41085ddbef25c25540b40a8/dotnet-sdk-6.0.418-osx-x64.tar.gz
 mkdir -p $HOME/dotnet && tar zxf dotnet-sdk-6.0.418-osx-x64.tar.gz -C $HOME/dotnet
+
+wget https://download.visualstudio.microsoft.com/download/pr/dff43b03-6ca6-413b-a48e-82f593c12d40/5760ef99163056c6850f0fe140e01958/dotnet-sdk-7.0.408-osx-x64.tar.gz
+mkdir -p $HOME/dotnet && tar zxf dotnet-sdk-7.0.408-osx-x64.tar.gz -C $HOME/dotnet
+
+wget https://download.visualstudio.microsoft.com/download/pr/9548c95b-8495-4b69-b6f0-1fdebdbbf9ff/30827786409718c5a9604711661da3b5/dotnet-sdk-8.0.204-osx-x64.tar.gz
+mkdir -p $HOME/dotnet && tar zxf dotnet-sdk-8.0.204-osx-x64.tar.gz -C $HOME/dotnet
+
 export DOTNET_ROOT=$HOME/dotnet
 export PATH=$PATH:$HOME/dotnet
 
+echo $DOTNET_ROOT
+echo $PATH | grep dotnet
+
+dotnet info
+dotnet --list-sdks
+
+```
+
+# install dotnet sdk linux macos arm64
+```
 wget https://download.visualstudio.microsoft.com/download/pr/5bb0e0e4-2a8d-4aba-88ad-232e1f65c281/ee6d35f762d81965b4cf336edde1b318/dotnet-sdk-7.0.405-osx-arm64.tar.gz
 mkdir -p $HOME/dotnet && tar zxf dotnet-sdk-7.0.405-osx-arm64.tar.gz -C $HOME/dotnet
 export DOTNET_ROOT=$HOME/dotnet
@@ -34,12 +55,13 @@ wget https://download.visualstudio.microsoft.com/download/pr/ef083c06-7aee-4a4f-
 mkdir -p $HOME/dotnet && tar zxf dotnet-sdk-8.0.101-osx-arm64.tar.gz -C $HOME/dotnet
 export DOTNET_ROOT=$HOME/dotnet
 export PATH=$PATH:$HOME/dotnet
-
 ```
-
 
 # install dotnet sdk linux
 ```
+wget https://download.visualstudio.microsoft.com/download/pr/904da7d0-ff02-49db-bd6b-5ea615cbdfc5/966690e36643662dcc65e3ca2423041e/dotnet-sdk-5.0.408-linux-x64.tar.gz
+mkdir -p $HOME/dotnet && tar zxf dotnet-sdk-5.0.408-linux-x64.tar.gz -C $HOME/dotnet
+
 wget https://download.visualstudio.microsoft.com/download/pr/01292c7c-a1ec-4957-90fc-3f6a2a1e5edc/025e84c4d9bd4aeb003d4f07b42e9159/dotnet-sdk-6.0.418-linux-x64.tar.gz
 
 mkdir -p $HOME/dotnet && tar zxf dotnet-sdk-6.0.418-linux-x64.tar.gz -C $HOME/dotnet
