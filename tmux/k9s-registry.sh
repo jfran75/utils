@@ -5,7 +5,7 @@
 # JSON array of title and command values
 tmux_session="k9s-registry"
 prefix="registry"
-kube_config_path="/Users/jchinchillas/.kube/prod-legacy"
+kube_config_path="~/.kube/prod-legacy"
 context="prod-legacy"
 # k9s --kubeconfig /Users/jchinchillas/.kube/prod-legacy --context prod-legacy --namespace registry --command pods
 
