@@ -1,31 +1,31 @@
-# script tmux/k9s-dev-svc.sh
-# Purpose: tmux script to run k9s development
+# script tmux/k9s-coder.sh
+# Purpose: tmux script to run k9s coder apps
 #!/bin/bash
 
 # JSON array of title and command values
-tmux_session="k9s-registry"
-prefix="registry"
-kube_config_path="/Users/jchinchillas/.kube/prod-legacy"
+tmux_session="k9s-coder"
+prefix="coder"
+kube_config_path="~/.kube/prod-legacy"
 context="prod-legacy"
-# k9s --kubeconfig /Users/jchinchillas/.kube/prod-legacy --context prod-legacy --namespace registry --command pods
 
 json='[
   { "title": "events", "command": "events", "namespace": "" },
   { "title": "nodes", "command": "nodes", "namespace": "" },
   { "title": "ns","command": "namespaces", "namespace": "" },
-  { "title": "gw", "command": "gateway", "namespace": "registry" },
-  { "title": "pods", "command": "pods", "namespace": "registry" },  
-  { "title": "deploys", "command": "deploy", "namespace": "registry" },
-  { "title": "vs", "command": "virtualservices", "namespace": "registry" },
-  { "title": "dr", "command": "destinationrules", "namespace": "registry" },
-  { "title": "svc", "command": "services", "namespace": "registry" },
-  { "title": "cm", "command": "configmaps", "namespace": "registry" },
-  { "title": "secrets", "command": "secrets", "namespace": "registry" },
-  { "title": "pvc", "command": "pvc", "namespace": "registry" },
-  { "title": "pv", "command": "pv", "namespace": "registry" },
-  { "title": "roles", "command": "roles", "namespace": "registry" },
-  { "title": "RoleBindings", "command": "rolebindings", "namespace": "registry" },
-  { "title": "PodSecurityPolicies", "command": "PodSecurityPolicies", "namespace": "registry" }
+  { "title": "gw", "command": "gateway", "namespace": "istio-system" },
+  { "title": "pods", "command": "pods", "namespace": "coder" },  
+  { "title": "deploys", "command": "deploy", "namespace": "coder" },
+  { "title": "statefulsets", "command": "statefulsets", "namespace": "coder" },
+  { "title": "vs", "command": "virtualservices", "namespace": "coder" },
+  { "title": "dr", "command": "destinationrules", "namespace": "coder" },
+  { "title": "svc", "command": "services", "namespace": "coder" },
+  { "title": "cm", "command": "configmaps", "namespace": "coder" },
+  { "title": "secrets", "command": "secrets", "namespace": "coder" },
+  { "title": "pvc", "command": "pvc", "namespace": "coder" },
+  { "title": "pv", "command": "pv", "namespace": "coder" },
+  { "title": "roles", "command": "roles", "namespace": "coder" },
+  { "title": "RoleBindings", "command": "rolebindings", "namespace": "coder" },
+  { "title": "PodSecurityPolicies", "command": "PodSecurityPolicies", "namespace": "coder" }
 ]'
 
 tmux kill-session -t ${tmux_session}
