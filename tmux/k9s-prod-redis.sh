@@ -16,6 +16,7 @@ json='[
   { "title": "pods", "command": "pods", "namespace": "redis" },  
   { "title": "statefulsets", "command": "statefulsets", "namespace": "redis" },
   { "title": "svc", "command": "services", "namespace": "redis" },
+  { "title": "endpoints", "command": "endpoints", "namespace": "redis" },
   { "title": "cm", "command": "configmaps", "namespace": "redis" },
   { "title": "secrets", "command": "secrets", "namespace": "redis" },
   { "title": "pvc", "command": "pvc", "namespace": "redis" },
