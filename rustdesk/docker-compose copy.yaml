@@ -1,0 +1,19 @@
+# # docker run --rm -it -v $PWD:/home/user/rustdesk -v rustdesk-git-cache:/home/user/.cargo/git -v rustdesk-registry-cache:/home/user/.cargo/registry -e PUID="$(id -u)" -e PGID="$(id -g)" rustdesk-builder
+# version: '3.8'
+# services:
+#   rustdesk-desktop:
+#     container_name: rustdesk-desktop
+#     image: rustdesk-desktop
+#     build:
+#       context: ./rustdesk_clone
+#       dockerfile: Dockerfile
+#     volumes:
+#       - ${PWD}/rustdesk/:/home/user/rustdesk
+#       - ${PWD}/rustdesk-git-cache:/home/user/.cargo/git
+#       - ${PWD}/rustdesk-registry-cache:/home/user/.cargo/registry
+#     environment:
+#       - PUID=1000
+#       - PGID=1000
+#     ports:
+#       - 4440:4440
+#     restart: unless-stopped
