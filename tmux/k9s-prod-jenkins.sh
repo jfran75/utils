@@ -19,6 +19,7 @@ json='[
   { "title": "vs", "command": "virtualservices", "namespace": "sfyc" },
   { "title": "dr", "command": "destinationrules", "namespace": "sfyc" },
   { "title": "svc", "command": "services", "namespace": "jenkins" },
+  { "title": "endpoints", "command": "endpoints", "namespace": "jenkins" },
   { "title": "cm", "command": "configmaps", "namespace": "jenkins" },
   { "title": "secrets", "command": "secrets", "namespace": "jenkins" },
   { "title": "pvc", "command": "pvc", "namespace": "jenkins" },
