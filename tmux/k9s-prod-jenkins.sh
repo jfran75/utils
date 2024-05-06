@@ -24,9 +24,13 @@ json='[
   { "title": "secrets", "command": "secrets", "namespace": "jenkins" },
   { "title": "pvc", "command": "pvc", "namespace": "jenkins" },
   { "title": "pv", "command": "pv", "namespace": "jenkins" },
+  { "title": "PeerAuthentication", "command": "PeerAuthentications", "namespace": "sfyc" },
+  { "title": "PodSecurityPolicies", "command": "PodSecurityPolicies", "namespace": "sfyc" },
   { "title": "roles", "command": "roles", "namespace": "jenkins" },
   { "title": "RoleBindings", "command": "rolebindings", "namespace": "jenkins" },
-  { "title": "PodSecurityPolicies", "command": "PodSecurityPolicies", "namespace": "jenkins" }
+  { "title": "ClusterRoles", "command": "ClusterRoles", "namespace": "" },
+  { "title": "ClusterRolBindings", "command": "clusterrolebinding", "namespace": "" },
+  { "title": "VirtualServers", "command": "VirtualServers", "namespace": "" }
 ]'
 
 tmux kill-session -t ${tmux_session}
