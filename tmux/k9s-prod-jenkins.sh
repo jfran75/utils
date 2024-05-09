@@ -36,13 +36,13 @@ json='[
 tmux kill-session -t ${tmux_session}
 wait
 
+# jenkins cluster
 kubectl vsphere login \
   --server tkg-supervisor.evolution.corp \
   --insecure-skip-tls-verify \
   --vsphere-username jenkins-adm@evolution.corp \
-  --tanzu-kubernetes-cluster-name ${context} \
-  --tanzu-kubernetes-cluster-namespace ${cluster_namespace}
-wait
+  --tanzu-kubernetes-cluster-name jenkins-cluster \
+  --tanzu-kubernetes-cluster-namespace shared-services
 
 # Check if the tmux session exists
 if ! tmux has-session -t ${tmux_session} 2>/dev/null; then

@@ -5,6 +5,8 @@
 - https://github.com/DaveRuijter/diagrams.net?tab=readme-ov-file#links-to-the-raw-library-files-to-add-them-to-the-application-manually
 - https://code.benco.io/icon-collection/
 - https://www.moderndata.ai/2020/08/working-with-azure-icons-in-draw-io-diagrams-net/
+- https://github.com/Dhananjay-JSR/Vs-Code-Icons-Drawio?tab=readme-ov-file
+- https://github.com/dderevjanik/github-vscode-icons
 ```
 https://app.diagrams.net/?splash=0&libs=general&clibs=Uhttps://raw.githubusercontent.com/DaveRuijter/diagrams.net/master/1.%20Azure%20Icon%20Set;Uhttps://raw.githubusercontent.com/DaveRuijter/diagrams.net/master/2.%20Azure%20Docs
 
