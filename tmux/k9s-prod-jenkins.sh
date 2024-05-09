@@ -6,8 +6,8 @@
 tmux_session="k9s-prod-jenkins"
 prefix="prod-jenkins"
 kube_config_path="~/.kube/config"
-context="production-sfyc"
-cluster_namespace="production-sfyc"
+context="jenkins-cluster"
+cluster_namespace="shared-services"
 
 json='[
   { "title": "events", "command": "events", "namespace": "" },
