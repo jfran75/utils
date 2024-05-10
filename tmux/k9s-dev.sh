@@ -6,7 +6,7 @@
 tmux_session="k9s-dev"
 prefix="dev"
 kube_config_path="~/.kube/config"
-context="dev-cluster-1-23"
+context="development-cluster"
 cluster_namespace="development"
 
 json='[
