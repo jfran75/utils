@@ -17,4 +17,6 @@ Manual failover required if you need to promote a replica in another data ce`nte
 ```
 
 ## test redis cluster with ansible and vagrant
-- https://github.com/madhur/redis-cluster-vagrant
+- vagrant examples
+  - https://github.com/madhur/redis-cluster-vagrant
+  - https://www.devopsroles.com/vagrant-install-redis-server/
