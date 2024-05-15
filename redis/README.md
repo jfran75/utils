@@ -16,4 +16,5 @@ Monitor the state of your Redis Cluster with a set of independent processes.
 Manual failover required if you need to promote a replica in another data ce`nter to master.
 ```
 
-##
+## test redis cluster with ansible and vagrant
+- https://github.com/madhur/redis-cluster-vagrant
