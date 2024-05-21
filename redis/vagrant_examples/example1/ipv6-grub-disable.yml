@@ -1,0 +1,51 @@
+---
+
+- name: Check if grub is present
+  ansible.builtin.stat:
+    path: /etc/default/grub
+  register: hasgrub
+
+- name: Grub
+  when: >
+    not (ansible_virtualization_type is defined and
+          (ansible_virtualization_type == "lxc" or ansible_virtualization_type == "docker")
+        ) and hasgrub.stat.exists and ipv6_grub_disable
+  block:
+    - name: Check if /boot/grub exists
+      ansible.builtin.stat:
+        path: /boot/grub
+      register: grubdir
+    - name: Check if /boot/grub2 exists
+      ansible.builtin.stat:
+        path: /boot/grub2
+      register: grub2dir
+    - name: Symlink /boot/grub2 to /boot/grub
+      ansible.builtin.file:
+        src: /boot/grub
+        dest: /boot/grub2
+        state: link
+      when:
+        - grubdir.stat.exists
+        - not grub2dir.stat.exists
+    - name: Disable IPv6 in grub
+      vars:
+        ipv6_quote: (["']?)                                # group 1
+        ipv6_before: ((?:(?<!ipv6.disable=)[^"'])*?)\s*    # group 2
+        ipv6_before_simpler: ([^"']*?)\s*                  # group 2
+        ipv6_existing: ((?:ipv6.disable=[^\s"']+\s*?)*)    # group 3
+        ipv6_after: ((?:(?<!ipv6.disable=)[^"'])*)         # group 4
+        ipv6_after_simpler: ([^"']*?)                      # group 4
+        ipv6_comments: (\s*#.*|)                           # group 5
+        ipv6_regexp: ^GRUB_CMDLINE_LINUX={{ ipv6_quote + ipv6_before_simpler + ipv6_existing + ipv6_after }}\1{{ ipv6_comments }}$
+        ipv6_replace: GRUB_CMDLINE_LINUX=\1\2\4 ipv6.disable=1\1\5
+        ipv6_replace_debug: 2)\2 3)\3 4)\4 5)\5 {{ ipv6_replace }}
+      ansible.builtin.lineinfile:
+        path: /etc/default/grub
+        regexp: "{{ ipv6_regexp }}"
+        line: "{{ ipv6_replace }}"
+        backrefs: true
+        create: false
+        mode: '0644'
+        backup: true
+      notify:
+        - Grub mkconfig

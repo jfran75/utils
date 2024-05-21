@@ -1,0 +1,68 @@
+---
+- name: Install ansible
+  hosts: all
+  become: true
+
+  tasks:
+    - name: Install prerequisites
+      ansible.builtin.apt:
+        name:
+          - ansible
+          - apt-transport-https
+          - ca-certificates
+          - curl
+          - gnupg-agent
+          - software-properties-common
+        update_cache: true
+
+- name: Debug | ansible_distribution
+  ansible.builtin.debug:
+    var: ansible_distribution
+- name: Include version-specific variables for Ubuntu.
+  ansible.builtin.include_vars: "{{ ansible_distribution }}-{{ ansible_distribution_version }}.yml"
+  when: ansible_distribution == 'Ubuntu'
+- name: Include version-specific variables for Debian.
+  ansible.builtin.include_vars: "{{ ansible_distribution }}-{{ ansible_distribution_major_version }}.yml"
+  when: ansible_distribution == 'Debian'
+- name: Include version-specific variables for RedHat
+  ansible.builtin.include_vars: "RedHat-{{ ansible_distribution_version.split('.')[0] }}.yml"
+  when: ansible_os_family == "RedHat"
+- name: Include version-specific variables for Alpine
+  ansible.builtin.include_vars: "Alpine.yml"
+  when: ansible_os_family == "Alpine"
+
+- name: Ensure sysctl is present
+  ansible.builtin.package:
+    name: procps
+    state: present
+  when: ansible_os_family == 'Debian'
+
+- name: Check if IPv6 disabled at grub command line
+  ansible.builtin.command: cat /proc/cmdline
+  changed_when: false
+  check_mode: false
+  ignore_errors: true
+  register: cmdline
+
+- name: Debug | cmdline
+  ansible.builtin.debug:
+    var: cmdline
+- name: Debug | ansible_os_family
+  ansible.builtin.debug:
+    var: ansible_os_family
+- name: Debug | ipv6_config
+  ansible.builtin.debug:
+    var: ipv6_config
+- name: Linux and IPv6 not disabled at boot
+  when: ansible_system == 'Linux' and not (' ipv6.disable=1' in cmdline.stdout)
+  block:
+    - name: Import ipv6-harden
+      ansible.builtin.import_tasks: ipv6-harden.yml
+      when: ipv6_config is defined and ipv6_config == 'harden'
+    - name: Import ipv6-disable
+      ansible.builtin.import_tasks: ipv6-disable.yml
+      when: ipv6_config is not defined or ipv6_config == 'disable'
+
+- name: Import windows-ipv6
+  ansible.builtin.import_tasks: windows-ipv6.yml
+  when: ansible_system == 'Win32NT'

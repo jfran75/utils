@@ -1,0 +1,101 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+boxes = [
+  {
+      :name => "redis1",
+      :eth1 => "192.168.100.21",
+      :mem => "4096",
+      :cpu => "4",
+      :hostport=>6379
+  },
+  {
+    :name => "redis2",
+    :eth1 => "192.168.100.22",
+    :mem => "4096",
+    :cpu => "4",
+    :hostport=>6380
+  },
+  {
+    :name => "redis3",
+    :eth1 => "192.168.100.23",
+    :mem => "4096",
+    :cpu => "4",
+    :hostport=>6381
+  }
+]
+
+Vagrant.configure("2") do |config|
+    config.vm.box = "hashicorp/precise64"
+
+    # Optional, SMB folder sharing
+    # If you wish to disable SMB share
+    # config.vm.synced_folder ".", "/vagrant", disabled: true
+
+    # Configure SMB folder sharing
+    config.vm.synced_folder '.', '/vagrant', {
+      type: 'smb', mount_options: ['vers=3.0'],
+      smb_username: ENV['VAGRANT_SMB_USERNAME'],
+      smb_password: ENV['VAGRANT_SMB_PASSWORD']
+    }    
+    
+    boxes.each do |opts|
+      config.vm.define opts[:name] do |config|
+        config.vm.hostname = opts[:name]
+        config.vm.network "forwarded_port", guest: 6379, host: opts[:hostport]
+        config.vm.network "private_network", ip: opts[:eth1]
+        config.vm.provider"hyperv" do |v|
+          v.vmname = opts[:name]
+          v.memory = opts[:mem]
+          v.cpus = opts[:cpu]
+          v.linked_clone = true
+        end
+        config.vm.provision "shell", inline: <<-SHELL
+          apt-get update -y
+          apt-get upgrade -y
+          apt-get install vim -y
+        SHELL
+      end
+    end
+end
+
+Vagrant.configure("2") do |config|
+    config.vm.box = "hashicorp/precise64"
+    config.vm.synced_folder '.', '/vagrant', disabled: true
+
+    boxes.each do |opts|
+      config.vm.define opts[:name] do |config|
+        config.vm.hostname = opts[:name]
+        config.vm.network "forwarded_port", guest: 6379, host: opts[:hostport]
+        config.vm.network "private_network", ip: opts[:eth1]
+        config.vm.provider "hyperv" do |v|
+          v.vmname = opts[:name]
+          v.memory = opts[:mem]
+          v.cpus = opts[:cpu]
+        end        
+      end
+    end
+end
+
+Vagrant.configure("2") do |config|
+    config.vm.box = "hashicorp/precise64"
+    config.vm.synced_folder '.', '/vagrant', disabled: true
+    config.vm.provider "hyperv" do |vb|
+      vb.memory = opts[:mem]
+      vb.cpus = opts[:cpu]
+    end
+
+    boxes.each do |opts|
+      config.vm.define opts[:name] do |config|
+        config.vm.hostname = opts[:name]
+        config.vm.network "forwarded_port", guest: 6379, host: opts[:hostport]
+        config.vm.network "private_network", ip: opts[:eth1]
+        config.vm.provider "hyperv" do |v|
+          v.vmname = opts[:name]
+          v.memory = opts[:mem]
+          v.cpus = opts[:cpu]
+        end        
+      end
+    end
+    # config.vm.synced_folder '.', '/vagrant', type: "smb", smb_username: "Administrador", smb_password: "Mazda.7506", disabled: true
+end
