@@ -120,6 +120,8 @@ export VAGRANT_DEFAULT_PROVIDER=hyperv
 echo $VAGRANT_WSL_WINDOWS_ACCESS_USER_HOME_PATH
 echo $VAGRANT_WSL_ENABLE_WINDOWS_ACCESS
 echo $VAGRANT_DEFAULT_PROVIDER
+
+ssh -t Administrador@192.168.3.36 "wsl ~"
 ```
 
 ### install ansible ubuntu wsdl
