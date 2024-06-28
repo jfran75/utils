@@ -23,7 +23,7 @@ boxes = [
     :cpu => "4",
     :hostport=>6381
   }
-]
+]  
 
 Vagrant.configure("2") do |config|
   config.vm.box = "generic/ubuntu2004"
@@ -54,7 +54,7 @@ Vagrant.configure("2") do |config|
           h.vmname = opts[:name]
           h.maxmemory = opts[:mem]
           h.memory = opts[:mem]
-          h.cpus = opts[:cpu]          
+          h.cpus = opts[:cpu]
       end
       config.vm.provision "ansible" do |a|
         a.verbose = "v"
