@@ -1,6 +1,8 @@
 # install apache kafka at kubernetes(KRaft Mode)
 - docs:
   - https://kafka.apache.org/documentation/
+- downloads:
+  - https://kafka.apache.org/downloads
 - ZooKeeper
 - KRaft Mode
 - Topics
@@ -20,7 +22,6 @@
 
 ## considerations
   - set the replication to 3
-
 
 ## install kafka at kubernetes with helm confluentinc
 -  helm chart docs:
@@ -42,7 +43,7 @@ helm upgrade -n confluent --install operator confluentinc/confluent-for-kubernet
 kubectl get crds | grep confluent
 ```
 
-## install kafka at kubernetes with helm bitname chart
+## install kafka at kubernetes with helm bitnami chart
 - docs:
   - [video](https://www.youtube.com/watch?v=n_vvgc47rWM)
 ```
@@ -53,3 +54,8 @@ helm show values bitnami/kafka
 helm install -n kafka -f kafka_values.yaml kafka bitnami/kafka
 helm uninstall -n kafka kafka
 ```
+
+## Notes
+- replication factor
+  - topics must have a replication factor of 3 (most frecuently)
+  - as a rule, for a replication factor of N, you can permanently lose up to N-1 brokers without losing any messages

@@ -13,6 +13,7 @@ Group: VPNMEGA
 
 #### disconnect
 /opt/cisco/anyconnect/bin/vpn -s disconnect Anyconnect.IT.Megacable.com.mx
+cd /opt/cisco/anyconnect
 
 
 #### uninstall 
