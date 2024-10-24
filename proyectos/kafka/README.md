@@ -1,4 +1,4 @@
-# install apache kafka at kubernetes(KRaft Mode)
+## install apache kafka at kubernetes(KRaft Mode)
 - docs:
   - https://kafka.apache.org/documentation/
 - downloads:
@@ -21,7 +21,43 @@
 - kPow
 
 ## considerations
-  - set the replication to 3
+  - changes to default configuration(./config/server.properties)
+    - set the replication factor to 3
+    - set the minimum in-sync replicas to 2(min.insync.replicas=2)
+    ![most popular option](most_popular_option.png)
+    - retry.backoff.ms=100 (by default is 100ms)
+    - delivery.timeout.ms=120000 (by default is 120000ms == 2 minutes)
+    - [producer timeouts](image.png)
+    - max.in.flight.requests.per.connection=1 (by default is 5)
+    - set idempotent producer to true "enable.idempotence=true"
+    - check the episode safe kafka producer settings
+
+## compresion at kafka
+- https://blog.cloudflare.com/squeezing-the-firehose
+- linger.ms=5
+- batch.size=16384(16kb)
+- compression.type=snappy
+- partitioner.class=StickyPartitionCache
+
+## elastic search free cluster
+- https://bonsai.io/
+
+
+## terminology
+  - acl: access control list
+  - broker: a kafka server
+  - cluster: a group of brokers
+  - consumer: an application that reads data from kafka
+  - producer: an application that writes data to kafka
+  - topic: a category or feed name to which records are published
+  - partition: a topic is divided into partitions
+  - replication: a partition is replicated across multiple brokers
+  - offset: a unique identifier of a record within a partition
+  - zookeeper: a centralized service for maintaining configuration information and naming
+  - acks: the number of acknowledgments the producer requires the leader to have received before considering a request complete
+
+
+## [install kafka with strimzi](./strimzi/README.md)
 
 ## install kafka at kubernetes with helm confluentinc
 -  helm chart docs:
@@ -59,3 +95,14 @@ helm uninstall -n kafka kafka
 - replication factor
   - topics must have a replication factor of 3 (most frecuently)
   - as a rule, for a replication factor of N, you can permanently lose up to N-1 brokers without losing any messages
+
+
+## recommended sdks
+- https://www.conduktor.io/kafka/kafka-sdk-list
+- https://github.com/confluentinc/confluent-kafka-dotnet
+
+## advanced topics
+- https://www.conduktor.io/kafka/advanced-kafka-consumer-with-java
+
+## run kafka with conduktor(docker compose)
+- https://www.conduktor.io/kafka/how-to-start-kafka-using-docker/
